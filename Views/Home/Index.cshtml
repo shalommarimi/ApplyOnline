@@ -14,7 +14,7 @@
     <link href="~/Fonts/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="~/Css/mediaicons.css" rel="stylesheet" />
 
 
     @Styles.Render("~/Css")
@@ -123,13 +123,13 @@
                     <div class="col-md-3">
                         <img src="~/Images/DVT_learnership_trainees.jpg" />
                         <h3>Graduated Trainees</h3>
-                        <
+
 
                     </div>
 
                     <div class="col-md-3">
                         <img src="~/Images/prudence-mabitsela.jpg" />
-                        <h3>Leader, Prudence Mabitsela SDD Specialist, BBBEE</h3>
+                        <h3>Prudence Mabitsela</h3>
 
                     </div>
                 </div>
@@ -158,51 +158,76 @@
 
 
     <section class="social">
-        <h2>Contact us</h2>
-        <div class="container-contact">
-            <div class="row">
+        <div class="container">
+            <h2>Connect</h2>
 
+            <div class="col">
                 <div class="col-md-3">
                     <i class="fa fa-location-arrow">Location</i>
 
                     <text class="arrange-contact">
 
-                        <br />291 Surrey Place<br />Surrey Ave <br />Randburg<br />2109
+                        <br />291 Surrey Place<br />Surrey Ave <br />Randburg 2109
 
 
                     </text>
 
+
                 </div>
-                <div class="col-md-3">
-                    <i class="fa fa-phone">Website</i>
-
-                    <text class="arrange-contact">
-
-                        <br />www.dynamicdna.co.za<br />www.dvt.co.za
 
 
-                    </text>
-                </div>
+
 
                 <div class="col-md-3">
-                    <i class="fa fa-envelope">Tel-Email</i>
+                    <i class="fa fa-wechat">Contact Us</i>
 
-                    <text class="arrange-contact">
+                    <text>
 
-                        <br />(012) 124 5446<br />info@dynamicdna.co.za
+                        <br />www.dynamicdna.co.za<br />info@dynamicdna.co.za<br />(012) 124 5446
 
 
                     </text>
                 </div>
 
+                <div class="col-md-3 col-centered">
+                    <ul>
+                        <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
 
 
 
             </div>
+
+
+
+
         </div>
 
 
     </section>
+    <section class="section-footer">
+        <footer>
+            <p>
+                &copy; 2010
+                <script>new Date().getFullYear() > 2010 && document.write("- " + new Date().getFullYear());</script> Dynamic DNA PTY LTD
+            </p>
+
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script type="text/javascript">
+            jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 2000);
+     });
+});
+            </script>
+        </footer>
+    </section>
+
 
 </body>
 

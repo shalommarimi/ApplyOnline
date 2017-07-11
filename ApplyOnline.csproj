@@ -157,12 +157,14 @@
     <Content Include="Global.asax" />
     <Content Include="Images\arrow.png" />
     <Content Include="Images\Background.jpg" />
+    <Content Include="Images\BBD-Custom-Login.png" />
     <Content Include="Images\DVT_learnership_trainees.jpg" />
     <Content Include="Images\DynamicDNALogo.png" />
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\Pp.jpg" />
     <Content Include="Images\Premise.jpg" />
     <Content Include="Images\prudence-mabitsela.jpg" />
+    <Content Include="Images\sddefault.jpg" />
     <Content Include="MyScripts\waypoints.js" />
     <Content Include="MyScripts\jquery.waypoints.min.js" />
     <Content Include="Scripts\bootstrap.js" />

@@ -113,24 +113,45 @@ h2:after {
 }
 
 .partners {
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     font-family: 'Yantramanav', sans-serif;
-    color: #2b398b;
+    color: #ffffff;
 }
 
 .insights {
     background-color: #ffffff;
     font-family: 'Yantramanav', sans-serif;
-    color: #2b398b;
+    color: #f39c12;
+    background-image: url('../Images/BBD-Custom-Login.png');
+    background-attachment: fixed;
 }
 
-    .insights h2 {
-        color: #2b398b;
-        font-family: 'Yantramanav', sans-serif;
-        text-align: center;
-        font-weight: bold;
-        font-size: 200%;
-    }
+.section-insights h2:after {
+    width: 100px;
+    height: 2px;
+    background-color: #f39c12;
+    display: block;
+    content: "";
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.section-insights h3:after {
+    width: 100px;
+    height: 2px;
+    background-color: #f39c12;
+    display: block;
+    content: "";
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.insights h2 {
+    color: #f39c12;
+    font-family: 'Yantramanav', sans-serif; /*fgggdgdgg*/
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+}
 
 .social h2 {
     color: #ffffff;
@@ -155,34 +176,26 @@ h2:after {
     margin-top: 50px;
 }
 
-.col-md-3 i {
-    color: #f39c12;
-    font-size:18px;
-    margin:5px;
-}
-.col-md-3 text {
-    color:#ffffff;
-    text-align:justify;
-}
-.container-contact col-md-3 {
-    margin-top:35px;
-    margin-bottom:35px;
-}
-
 .arrange {
     text-align: justify;
 }
 
-.arrange-contact p {
-    text-align: justify;
-    color: #f39c12;
+.section-footer {
+    background-color: #2b398b;
+    text-align: center;
 }
 
-.social {
-   
-    background-color: #2b398b;
-    font-family: 'Yantramanav', sans-serif;
+    .section-footer p {
+        color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+    }
 
+.social {
+    background-color: #2b398b !Important;
+    font-family: 'Yantramanav', sans-serif;
+    color: #2b398b;
+    /*height:200px;*/
 }
 
 .text {
@@ -196,6 +209,7 @@ h2:after {
 
 .section-insights h3 {
     font-weight: bold;
+    font-size: 150%;
 }
 
 .but_small5.light2 {
@@ -217,7 +231,25 @@ h2:after {
 
 .section-insights {
     text-align: center;
- 
+    /*background-color:#2b398b;
+    margin-top:60px;*/
+}
+
+.col i {
+    color: #f39c12;
+    font-size: 16px;
+    text-align: center;
+}
+
+.col text {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
 }
 
 p {
