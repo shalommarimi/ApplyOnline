@@ -149,21 +149,40 @@ h2:after {
         margin: 0 auto;
         margin-top: 10px;
     }
+
 .insights img {
-    width:100%;
-    margin-top:50px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.col-md-3 i {
+    color: #f39c12;
+    font-size:18px;
+    margin:5px;
+}
+.col-md-3 text {
+    color:#ffffff;
+    text-align:justify;
+}
+.container-contact col-md-3 {
+    margin-top:35px;
+    margin-bottom:35px;
 }
 
 .arrange {
     text-align: justify;
 }
 
+.arrange-contact p {
+    text-align: justify;
+    color: #f39c12;
+}
+
 .social {
-    /*background-color: #2b398b !Important;*/
-      background-color: #2b398b;
+   
+    background-color: #2b398b;
     font-family: 'Yantramanav', sans-serif;
-    /*color: #2b398b;*/
-    /*height:200px;*/
+
 }
 
 .text {
@@ -197,9 +216,8 @@ h2:after {
 }
 
 .section-insights {
-    text-align:center;
-    /*background-color:#2b398b;
-    margin-top:60px;*/
+    text-align: center;
+ 
 }
 
 p {

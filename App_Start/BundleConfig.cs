@@ -28,9 +28,7 @@ namespace ApplyOnline.App_Start
 
 
             bundles.Add(new StyleBundle("~/Content").Include(
-                 "~/Content/bootstrap.min.css",
-                 "~/Content/bootstrap-theme.min.css",
-                 "~/Content/jquery-ui.css"
+                   "~/Content/jquexry-ui.css"
 
                  ));
 
