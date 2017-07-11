@@ -36,8 +36,8 @@ namespace ApplyOnline.App_Start
 
             bundles.Add(new StyleBundle("~/Css").Include(
                 "~/Css/animate.css",
-                "~/Css/index.css"
-                //"~/Css/waypoints.css"
+                "~/Css/index.css",
+                "~/Css/waypoints.css"
 
                 ));
 
