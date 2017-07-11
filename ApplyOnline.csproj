@@ -165,8 +165,8 @@
     <Content Include="Images\Premise.jpg" />
     <Content Include="Images\prudence-mabitsela.jpg" />
     <Content Include="Images\sddefault.jpg" />
-    <Content Include="MyScripts\waypoints.js" />
     <Content Include="MyScripts\jquery.waypoints.min.js" />
+    <Content Include="MyScripts\waypoints.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap.min.css.map" />

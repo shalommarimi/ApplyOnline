@@ -1,7 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization;
+<!DOCTYPE html>
 <html>
 <head>
+    <link href="~/Fonts/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
     <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon" />
+
+    @Styles.Render("~/Css")
+    @Styles.Render("~/Content")
+    @Scripts.Render("~/Scripts")
+    @Scripts.Render("~/MyScripts")
 </head>
 <body>
 

@@ -28,14 +28,14 @@ namespace ApplyOnline.App_Start
 
 
             bundles.Add(new StyleBundle("~/Content").Include(
-                   "~/Content/jquexry-ui.css"
+                   "~/Content/jquery-ui.css"
 
                  ));
 
             bundles.Add(new StyleBundle("~/Css").Include(
                 "~/Css/animate.css",
                 "~/Css/index.css",
-                "~/Css/waypoints.css"
+                "~/Css/waypoilnts.css"
 
                 ));
 
