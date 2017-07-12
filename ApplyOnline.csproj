@@ -150,6 +150,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Css\animate.css" />
     <Content Include="Css\index.css" />
+    <Content Include="Css\media.css" />
     <Content Include="Css\style.css" />
     <Content Include="Css\waypoints.css" />
     <Content Include="Fonts\css\font-awesome.css" />
@@ -228,7 +229,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Content\ContactController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">

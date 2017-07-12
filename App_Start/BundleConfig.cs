@@ -40,7 +40,8 @@ namespace ApplyOnline.App_Start
                 "~/Css/animate.css",
                 "~/Css/index.css",
                 "~/Css/waypolints.css",
-                 "~/Css/style.css"
+                 "~/Css/style.css",
+                  "~/Css/media.css"
 
                 ));
 
