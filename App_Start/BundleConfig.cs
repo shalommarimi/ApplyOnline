@@ -17,11 +17,14 @@ namespace ApplyOnline.App_Start
             bundles.Add(new ScriptBundle("~/MyScripts").Include(
                  "~/MyScripts/jquery.waypoints.min.js",
                  "~/MyScripts/waypoints.js"
+
              ));
 
             bundles.Add(new ScriptBundle("~/Scripts").Include(
                 "~/Scripts/jquery-1.10.2.js",
-                 "~/Scripts/jquery-ui.js"
+                 "~/Scripts/jquery-ui.js",
+                  "~/Scripts/main.js",
+                  "~/Scripts/jquery-3.0.0.min.js"
 
                  ));
 
@@ -35,7 +38,8 @@ namespace ApplyOnline.App_Start
             bundles.Add(new StyleBundle("~/Css").Include(
                 "~/Css/animate.css",
                 "~/Css/index.css",
-                "~/Css/waypoilnts.css"
+                "~/Css/waypolints.css",
+                 "~/Css/style.css"
 
                 ));
 
