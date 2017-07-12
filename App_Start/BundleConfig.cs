@@ -24,7 +24,8 @@ namespace ApplyOnline.App_Start
                 "~/Scripts/jquery-1.10.2.js",
                  "~/Scripts/jquery-ui.js",
                   "~/Scripts/main.js",
-                  "~/Scripts/jquery-3.0.0.min.js"
+                  "~/Scripts/jquery-3.0.0.min.js",
+                   "~/Scripts/bootstrap.min.js"
 
                  ));
 
