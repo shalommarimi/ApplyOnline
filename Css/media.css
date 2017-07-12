@@ -1,7 +1,7 @@
 ﻿.icons .fa {
   padding: 20px;
   font-size: 30px;
-  width: 73px;
+  width: 68px;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
@@ -36,4 +36,8 @@
 .fa-instagram {
   background: #FCBE1B;
   color: white;
+}
+.fa-home {
+ 
+  color: #fff;
 }
