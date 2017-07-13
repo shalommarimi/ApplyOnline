@@ -6,6 +6,7 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    background-image: url(../Images/BBD-Custom-Login.png);
 }
 
 .intro {
@@ -135,6 +136,7 @@ h2:after {
     margin: 0 auto;
     margin-top: 10px;
 }
+
 .section-insights h3:after {
     width: 100px;
     height: 2px;
@@ -147,7 +149,7 @@ h2:after {
 
 .insights h2 {
     color: #FCBE1B;
-    font-family: 'Yantramanav', sans-serif; /*fgggdgdgg*/
+    font-family: 'Yantramanav', sans-serif;
     text-align: center;
     font-weight: bold;
     font-size: 200%;
@@ -172,9 +174,15 @@ h2:after {
     }
 
 .insights img {
-    width: 100%;
-    margin-top: 50px;
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    border: solid 3px #FCBE1B;
 }
+
+    .insights img:hover {
+        border: solid 3px #2A2B7B;
+    }
 
 .arrange {
     text-align: justify;
@@ -195,13 +203,9 @@ h2:after {
     background-color: #2A2B7B !Important;
     font-family: 'Yantramanav', sans-serif;
     color: #2A2B7B;
-    /*height:200px;*/
 }
 
-.text {
-    font-weight: bold;
-    font-size: 110%;
-}
+
 
 .announce-news {
     background-color: #FCBE1B;
@@ -231,26 +235,9 @@ h2:after {
 
 .section-insights {
     text-align: center;
-    /*background-color:#2A2B7B;
-    margin-top:60px;*/
 }
 
-.col i {
-    color: #FCBE1B;
-    font-size: 16px;
-    text-align: center;
-}
 
-.col text {
-    color: #ffffff;
-    font-size: 14px;
-    text-align: center;
-}
-
-.col-centered {
-    float: none;
-    margin: 0 auto;
-}
 
 p {
     font-size: 120%;

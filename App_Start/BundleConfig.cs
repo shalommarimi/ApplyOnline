@@ -22,10 +22,10 @@ namespace ApplyOnline.App_Start
 
             bundles.Add(new ScriptBundle("~/Scripts").Include(
                 "~/Scripts/jquery-1.10.2.js",
-                 "~/Scripts/jquery-ui.js",
-                  "~/Scripts/main.js",
-                  "~/Scripts/jquery-3.0.0.min.js",
-                   "~/Scripts/bootstrap.min.js"
+                "~/Scripts/jquery-ui.js",
+                "~/Scripts/main.js",
+                "~/Scripts/jquery-3.0.0.min.js",
+                "~/Scripts/bootstrap.min.js"
 
                  ));
 
@@ -40,8 +40,10 @@ namespace ApplyOnline.App_Start
                 "~/Css/animate.css",
                 "~/Css/index.css",
                 "~/Css/waypolints.css",
-                 "~/Css/style.css",
-                  "~/Css/media.css"
+                "~/Css/style.css",
+                "~/Css/media.css",
+                "~/Css/slider.css",
+                "~/Css/side.css"
 
                 ));
 
