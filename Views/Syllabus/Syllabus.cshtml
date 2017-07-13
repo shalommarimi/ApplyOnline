@@ -52,8 +52,8 @@
     </div>
 
     <section class="send-email">
-        <div class="form-horizontal text-center">
-            @using (Html.BeginForm())
+        <div class="form-horizontal">
+            @using (Html.BeginForm("Syllabus","Syllabus"))
             {
                 @Html.ValidationSummary()
 

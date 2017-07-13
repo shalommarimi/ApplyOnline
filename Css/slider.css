@@ -1,14 +1,14 @@
-﻿.body{
-
-    text-align:center;
-    background-image:url(../Images/BBD-Custom-Login.png);
-    background-attachment:fixed;
-    background-repeat:no-repeat;
+﻿.body {
+    text-align: center;
+    background-image: url(../Images/BBD-Custom-Login.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
+
 .body-content {
-    text-align:center;
-
+    text-align: center;
 }
+
 .center {
     margin: auto;
     width: 60%;
@@ -30,14 +30,12 @@
 
 .heading {
     text-align: center;
-    
 }
 
 .sylla-section h3 {
     color: #ffffff;
     font-family: 'Yantramanav', sans-serif;
     text-align: center;
-    
 }
 
 
@@ -50,11 +48,20 @@
         content: "";
         margin: 0 auto;
         margin-top: 10px;
- }
-.form-group {
-    color:#FCBE1B;
-
-}
-    .form-group .btn {
-        margin:12px;
     }
+
+.form-group {
+    color: #FCBE1B;
+    padding: 10px 47px;
+}
+
+    .form-group .btn {
+        margin: 12px;
+    }
+
+.form-control {
+    background-color: #FCBE1B;
+    height: 45px;
+    width: 300px;
+    color: #2A2B7B;
+}

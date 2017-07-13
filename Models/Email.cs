@@ -5,7 +5,6 @@ namespace ApplyOnline.Models
     public class Email
     {
 
-        public string Recipient { get; set; }
 
         [Required]
         [Display(Name = "Your Email Address")]

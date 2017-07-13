@@ -14,7 +14,7 @@ namespace ApplyOnline.Services
 
                     mail.To.Add("smarimi@jhb.dvt.co.za");
                     mail.From = new MailAddress("learnerslogsystem@gmail.com");
-                    mail.Subject = (subject);
+                    mail.Subject = (subject + emailaddress);
                     mail.Body = (message);
                     mail.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
