@@ -52,7 +52,7 @@
 
 .form-group {
     color: #FCBE1B;
-    padding: 10px 47px;
+    /*padding: 10px 47px;*/
 }
 
     .form-group .btn {
@@ -60,8 +60,18 @@
     }
 
 .form-control {
-    background-color: #FCBE1B;
-    height: 45px;
+    /*background-color: #FCBE1B;*/
+    height: 40px;
     width: 300px;
     color: #2A2B7B;
+   
 }
+.form-control:focus {
+   
+    border-color: #FCBE1B;
+   
+}
+.form-group .btn {
+    margin:3px;
+}
+

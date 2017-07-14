@@ -12,7 +12,7 @@ namespace ApplyOnline.Models
         public string SentFrom { get; set; }
 
         [Required]
-        [Display(Name = "Subject")]
+        [Display(Name = "Enquiry Subject")]
         public string Subject { get; set; }
 
         [Required]
