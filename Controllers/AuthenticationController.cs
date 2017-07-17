@@ -5,7 +5,7 @@ namespace ApplyOnline.Controllers
     public class AuthenticationController : Controller
     {
         // GET: Authentication
-        public ActionResult Authenticate()
+        public ActionResult AuthenticateUser()
         {
             return View();
         }

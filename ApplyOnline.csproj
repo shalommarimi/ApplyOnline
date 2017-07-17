@@ -159,20 +159,48 @@
     <Content Include="Fonts\css\font-awesome.min.css" />
     <Content Include="Fonts\fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\1.png" />
-    <Content Include="Images\2.png" />
-    <Content Include="Images\3.png" />
-    <Content Include="Images\4.png" />
-    <Content Include="Images\Background.jpg" />
-    <Content Include="Images\BBD-Custom-Login.png" />
-    <Content Include="Images\DVT_learnership_trainees.jpg" />
-    <Content Include="Images\DynamicDNALogo.png" />
-    <Content Include="Images\favicon.ico" />
-    <Content Include="Images\mictseta_logo.jpg" />
-    <Content Include="Images\Pp.jpg" />
-    <Content Include="Images\Premise.jpg" />
-    <Content Include="Images\prudence-mabitsela.jpg" />
-    <Content Include="Images\sddefault.jpg" />
+    <Content Include="Images\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\BBD-Custom-Login.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DVT_learnership_trainees.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\DynamicDNALogo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\favicon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mictseta_logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Pp.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Premise.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\prudence-mabitsela.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\sddefault.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MyScripts\jquery.waypoints.min.js" />
     <Content Include="MyScripts\waypoints.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -214,6 +242,9 @@
     <Content Include="Fonts\scss\_screen-reader.scss" />
     <Content Include="Fonts\scss\_stacked.scss" />
     <Content Include="Fonts\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\ApplyOnline20170714035628 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ApplyOnline20170714040126 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\VirtualGameDrive - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
@@ -260,6 +291,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="Views\Contact\EmailUs.cshtml" />
     <Content Include="Views\Syllabus\Syllabus.cshtml" />
+    <Content Include="Views\Authentication\AuthenticateUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,7 +301,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -14,13 +14,13 @@ namespace ApplyOnline.App_Start
             //    "~/Scripts/angolar-sanitize.min.js"
             //    ));
 
-            bundles.Add(new ScriptBundle("~/MyScripts").Include(
+            bundles.Add(new ScriptBundle("~/MyScriptsB").Include(
                  "~/MyScripts/jquery.waypoints.min.js",
                  "~/MyScripts/waypoints.js"
 
              ));
 
-            bundles.Add(new ScriptBundle("~/Scripts").Include(
+            bundles.Add(new ScriptBundle("~/ScriptsB").Include(
                 "~/Scripts/jquery-1.10.2.js",
                 "~/Scripts/jquery-ui.js",
                 "~/Scripts/main.js",
@@ -31,12 +31,12 @@ namespace ApplyOnline.App_Start
 
 
 
-            bundles.Add(new StyleBundle("~/Content").Include(
+            bundles.Add(new StyleBundle("~/ContentB").Include(
                    "~/Content/jquery-ui.css"
 
                  ));
 
-            bundles.Add(new StyleBundle("~/Css").Include(
+            bundles.Add(new StyleBundle("~/CssB").Include(
                 "~/Css/animate.css",
                 "~/Css/index.css",
                 "~/Css/waypolints.css",
@@ -46,7 +46,7 @@ namespace ApplyOnline.App_Start
                 "~/Css/side.css"
 
                 ));
-
+            BundleTable.EnableOptimizations = true;
 
         }
 

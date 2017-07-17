@@ -1,0 +1,44 @@
+﻿.icons .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 68px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+ 
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #FCBE1B;
+  color: white;
+}
+
+.fa-twitter {
+  background: #FCBE1B;
+  color: white;
+}
+
+
+.fa-linkedin {
+  background: #FCBE1B;
+  color: white;
+}
+
+.fa-youtube {
+  background:#FCBE1B;
+  color: white;
+}
+
+.fa-instagram {
+  background: #FCBE1B;
+  color: white;
+}
+.fa-home {
+ 
+  color: #fff;
+}

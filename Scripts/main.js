@@ -18,13 +18,17 @@ jQuery(document).ready(function($){
 		mainHeader.toggleClass('nav-open');
 	});
 
-	$(window).on('scroll', function(){
-		if( !scrolling ) {
-			scrolling = true;
-			(!window.requestAnimationFrame)
+	$(window).on('scroll', function () {
+	    if (!scrolling) {
+	        scrolling = true;
+	        (!window.requestAnimationFrame)
 				? setTimeout(autoHideHeader, 250)
 				: requestAnimationFrame(autoHideHeader);
-		}
+	    }
+	});
+
+	$('.scroll').on('click', function () {
+	    mainHeader.toggleClass('nav-open');
 	});
 
 	$(window).on('resize', function(){

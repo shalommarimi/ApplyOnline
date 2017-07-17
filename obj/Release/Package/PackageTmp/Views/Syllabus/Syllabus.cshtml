@@ -1,0 +1,174 @@
+﻿@model ApplyOnline.Models.Email
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var random = new Random();
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MICT Seta Syllabus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div class="body-content">
+
+
+        <header>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="@Url.Action("Index","Home")">Home</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+                <a href="#email" class="scroll">Email Us</a>
+            </div>
+
+
+            <span style="font-size:25px;cursor:pointer; color:#FCBE1B;" onclick="openNav()">&#9776; MENU</span>
+        </header>
+
+        <section class="sylla-section">
+
+
+            <h3 class="heading">MICT SETA - SAQA Qualifications</h3>
+            <div class="center">
+                <div class="w3-content w3-display-container">
+                    <img class="mySlides" src="~/Images/1.png">
+                    <img class="mySlides" src="~/Images/2.png">
+                    <img class="mySlides" src="~/Images/3.png">
+                    <img class="mySlides" src="~/Images/4.png">
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="align-content:center">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+                </div>
+
+            </div>
+
+        </section>
+        <section class="section-map">
+            <h3 class="heading">Our Location</h3>
+            <div id="map"></div>
+        </section>
+    </div>
+
+    <section class="send-email">
+
+        <h3 class="heading">Send Us Your Question</h3>
+
+        <div class="container">
+
+
+
+            <div class="form-horizontal" id="email">
+                @using (Html.BeginForm("Syllabus", "Syllabus"))
+            {
+                    @Html.ValidationSummary()
+
+
+                    <fieldset>
+
+                        <div class="form-group">
+
+                            @Html.LabelFor(model => model.SentFrom, new { @class = "col-md-4 col-md-offset-4" })
+
+                            <div class="col-md-4 col-md-offset-4">
+                                @Html.TextBoxFor(model => model.SentFrom, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SentFrom)
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            @Html.LabelFor(model => model.Subject, new { @class = "col-md-4 col-md-offset-4" })
+
+                            <div class="col-md-4 col-md-offset-4">
+                                @Html.TextBoxFor(model => model.Subject, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Subject)
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Message, new { @class = "col-md-4 col-md-offset-4" })
+                            <div class="col-md-4 col-md-offset-4">
+                                @Html.TextAreaFor(model => model.Message, new { @class = "form-control", @placeholder = "You may include your name in thet enquiry message, however it is optional." })
+                                @Html.ValidationMessageFor(model => model.Message)
+                                <div class="buttons">
+                                    <input type="submit" name="submit" class="btn" value="Send" />
+                                    <input type="reset" name="submit" class="btn" value="Reset" />
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </fieldset>
+                }
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "150px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
+    </script>
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(-26.0951756, 27.998679700000025);
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = { center: myCenter, zoom: 5 };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({ position: myCenter });
+            marker.setMap(map);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6I0udxhaIloq_3-9wDMJ6N_Fv45ZzBPQ&callback=myMap"></script>
+    <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $(".scroll").click(function (event) {
+                        event.preventDefault();
+                        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 2000);
+                    });
+                });
+    </script>
+
+</body>
+</html>

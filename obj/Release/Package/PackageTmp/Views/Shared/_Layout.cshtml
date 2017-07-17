@@ -1,0 +1,29 @@
+﻿@using System.Web.Optimization;
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Fonts/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon" />
+
+    @Styles.Render("~/CssB")
+    @Scripts.Render("~/ScriptsB")
+    @Scripts.Render("~/MyScriptsB")
+    @Styles.Render("~/ContentB")
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+    @RenderBody()
+
+</body>
+</html>

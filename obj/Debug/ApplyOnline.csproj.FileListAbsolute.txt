@@ -11,6 +11,20 @@ C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\b
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\roslyn\vbc.exe
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\roslyn\VBCSCompiler.exe
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\1.png
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\2.png
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\3.png
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\4.png
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Background.jpg
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\BBD-Custom-Login.png
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\DVT_learnership_trainees.jpg
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\DynamicDNALogo.png
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\favicon.ico
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\mictseta_logo.jpg
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Pp.jpg
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Premise.jpg
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\prudence-mabitsela.jpg
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\sddefault.jpg
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\ApplyOnline.dll.config
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\ApplyOnline.dll
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\ApplyOnline.pdb
@@ -54,4 +68,3 @@ C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\b
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\System.Web.Mvc.xml
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\obj\Debug\ApplyOnline.dll
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\obj\Debug\ApplyOnline.pdb
-C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\obj\Debug\ApplyOnline.csprojResolveAssemblyReference.cache
