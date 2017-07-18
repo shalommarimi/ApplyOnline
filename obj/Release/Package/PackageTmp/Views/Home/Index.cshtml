@@ -12,6 +12,7 @@
     <title>Dynamic DNA Online Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 </head>
 
 <body>
@@ -31,7 +32,7 @@
                     <li><a href="#ann" class="scroll">Announcements</a></li>
                     <li><a href="#news" class="scroll">Our News</a></li>
                     <li><a href="#ins" class="scroll">Our Insights</a></li>
-                    <li><a href="@Url.Action("Syllabus", "Syllabus")">Information</a></li>
+                    <li>@Html.ActionLink("Information", "Syllabus", "Syllabus"@*, new { @class = "scroll" }*@)</li>
                     <li><a href="#part" class="scroll">Partnerships</a></li>
                     <li><a href="#social" class="scroll"><abbr class="fa fa-thumbs-up">Like Us</abbr></a></li>
 
@@ -160,38 +161,52 @@
         <a id="part"></a>
         <section class="partners">
             <h2>Partnerships</h2>
-            <p class="parag">
-                Learnership Programme. Are you unemployed , looking for a learnership in information Technology and programming , want to become employable and apply the skills learnt? want to get a travel allowance while you study? , if the answer is yes then email us your cv, id copy and matric certificate to be considered. email to info@dynamicdna.co.za the subject line should be Learnership. Get this once in a lifetime opportunity. The purpose of the programme is to equip previously disadvantaged youths with nationally recognised qualifications, based on unit standards, while also providing them with workplace experience in the Systems Development landscape.Successful candidates who show dedication to the programme will be considered for a following Higher NQF level qualification, it is of utmost importance that learners give 100% dedication to this programme.
-            </p>
-            <p class="parag">
-                Learnership Programme. Are you unemployed , looking for a learnership in information Technology and programming , want to become employable and apply the skills learnt? want to get a travel allowance while you study? , if the answer is yes then email us your cv, id copy and matric certificate to be considered. email to info@dynamicdna.co.za the subject line should be Learnership. Get this once in a lifetime opportunity. The purpose of the programme is to equip previously disadvantaged youths with nationally recognised qualifications, based on unit standards, while also providing them with workplace experience in the Systems Development landscape.Successful candidates who show dedication to the programme will be considered for a following Higher NQF level qualification, it is of utmost importance that learners give 100% dedication to this programme.
-            </p>
-            <p class="parag">
-                Learnership Programme. Are you unemployed , looking for a learnership in information Technology and programming , want to become employable and apply the skills learnt? want to get a travel allowance while you study? , if the answer is yes then email us your cv, id copy and matric certificate to be considered. email to info@dynamicdna.co.za the subject line should be Learnership. Get this once in a lifetime opportunity. The purpose of the programme is to equip previously disadvantaged youths with nationally recognised qualifications, based on unit standards, while also providing them with workplace experience in the Systems Development landscape.Successful candidates who show dedication to the programme will be considered for a following Higher NQF level qualification, it is of utmost importance that learners give 100% dedication to this programme.
-            </p>
+            <div class="cycle-slideshow">
 
-        </section>
-    </div>
+                <span class="cycle-prev">&#9001;</span>
+                <span class="cycle-next">&#9002;</span>
+                <span class="cycle-pager"></span>
 
+                <img src="~/Images/blue.png" />
+                <img src="~/Images/partners.png" />
+                <img src="~/Images/cloud.png" />
+                <img src="~/Images/partners.png" />
+                <img src="~/Images/dvt.png" />
+                <img src="~/Images/partners.png" />
+                <img src="~/Images/microsoft.png" />
+                <img src="~/Images/partners.png" />
+                <img src="~/Images/mict.png" />
+                <img src="~/Images/partners.png" />
+                <img src="~/Images/indigo.png" />
+                <img src="~/Images/partners.png" />
+                <img src="~/Images/partners.png" />
 
-    <section class="social" id="social">
-        <div class="text-center">
-            <h2>Connect</h2>
-
-            <div class="icons">
-
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-twitter"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-                <a href="#" class="fa fa-youtube"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#landing" class="fa fa-home scroll"></a>
             </div>
 
-        </div>
+        </section>
 
 
-    </section>
+
+        <section class="social" id="social">
+            <div class="text-center">
+                <h2>Connect</h2>
+
+                <div class="icons">
+
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#landing" class="scroll fa fa-home"></a>
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </div>
     <section class="section-footer">
         <footer>
             <p>

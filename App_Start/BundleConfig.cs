@@ -16,7 +16,8 @@ namespace ApplyOnline.App_Start
 
             bundles.Add(new ScriptBundle("~/MyScriptsB").Include(
                  "~/MyScripts/jquery.waypoints.min.js",
-                 "~/MyScripts/waypoints.js"
+                 "~/MyScripts/waypoints.js",
+                 "~/MyScripts/jquery.cycle2.min.js"
 
              ));
 
@@ -43,7 +44,8 @@ namespace ApplyOnline.App_Start
                 "~/Css/style.css",
                 "~/Css/media.css",
                 "~/Css/slider.css",
-                "~/Css/side.css"
+                "~/Css/side.css",
+                 "~/Css/partners.css"
 
                 ));
             BundleTable.EnableOptimizations = true;

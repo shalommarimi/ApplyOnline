@@ -151,6 +151,7 @@
     <Content Include="Css\animate.css" />
     <Content Include="Css\index.css" />
     <Content Include="Css\media.css" />
+    <Content Include="Css\partners.css" />
     <Content Include="Css\side.css" />
     <Content Include="Css\slider.css" />
     <Content Include="Css\style.css" />
@@ -171,24 +172,30 @@
     <Content Include="Images\4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Back.jpg" />
     <Content Include="Images\Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\BBD-Custom-Login.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\blue.png" />
+    <Content Include="Images\cloud.png" />
+    <Content Include="Images\dvt.png" />
     <Content Include="Images\DVT_learnership_trainees.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\DynamicDNALogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\favicon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Images\favicon-16x16.ico" />
+    <Content Include="Images\indigo.png" />
+    <Content Include="Images\microsoft.png" />
+    <Content Include="Images\mict.png" />
     <Content Include="Images\mictseta_logo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\partners.png" />
     <Content Include="Images\Pp.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -201,6 +208,8 @@
     <Content Include="Images\sddefault.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\_fs_DVT_Learner_2.jpg" />
+    <Content Include="MyScripts\jquery.cycle2.min.js" />
     <Content Include="MyScripts\jquery.waypoints.min.js" />
     <Content Include="MyScripts\waypoints.js" />
     <Content Include="Scripts\bootstrap.js" />

@@ -19,7 +19,6 @@ C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\b
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\BBD-Custom-Login.png
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\DVT_learnership_trainees.jpg
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\DynamicDNALogo.png
-C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\favicon.ico
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\mictseta_logo.jpg
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Pp.jpg
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Premise.jpg
