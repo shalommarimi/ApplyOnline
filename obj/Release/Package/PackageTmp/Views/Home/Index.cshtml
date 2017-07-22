@@ -11,6 +11,7 @@
 <head>
     <title>Dynamic DNA Online Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
 
 
 </head>
@@ -32,7 +33,7 @@
                     <li><a href="#ann" class="scroll">Announcements</a></li>
                     <li><a href="#news" class="scroll">Our News</a></li>
                     <li><a href="#ins" class="scroll">Our Insights</a></li>
-                    <li>@Html.ActionLink("Information", "Syllabus", "Syllabus"@*, new { @class = "scroll" }*@)</li>
+                    <li>@Html.ActionLink("Information", "Syllabus", "Syllabus")</li>
                     <li><a href="#part" class="scroll">Partnerships</a></li>
                     <li><a href="#social" class="scroll"><abbr class="fa fa-thumbs-up">Like Us</abbr></a></li>
 
@@ -199,6 +200,7 @@
                     <a href="#" class="fa fa-youtube"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#landing" class="scroll fa fa-home"></a>
+                    <text class="text-sub" onclick="subscribe()">Subscribe</></text>
                 </div>
 
             </div>
@@ -225,7 +227,11 @@
             </script>
         </footer>
     </section>
-
+    <script>
+        function subscribe() {
+            alert("You are about to subscribe to our News letter and posts as they become available")
+        }
+    </script>
 
 </body>
 

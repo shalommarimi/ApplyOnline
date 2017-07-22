@@ -44,7 +44,7 @@ html, body {
     }
 
 img {
-    padding-bottom: 25px;
+    padding-bottom: 0px;
 }
 
 .btn {
@@ -316,4 +316,13 @@ p {
         font-size: 20%;
         line-height: 100%;
     }
+}
+.social .icons text {
+    font-weight:bold;
+    color:#fff;
+    font-size:16px !important;
+   }
+.social .icons text:hover {
+    color:#FCBE1B;
+    cursor:pointer;
 }

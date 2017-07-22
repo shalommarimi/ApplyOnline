@@ -12,7 +12,7 @@ namespace ApplyOnline.Controllers
         }
         [HttpPost]
 
-        public ViewResult Syllabus(Models.Email email)
+        public ViewResult Send(Models.Email email)
         {
 
 

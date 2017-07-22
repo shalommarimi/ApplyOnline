@@ -7,7 +7,6 @@ html, body {
     height: 100%;
     width: 100%;
     background-image: url(../Images/BBD-Custom-Login.png);
-
 }
 
 .intro {
@@ -316,4 +315,40 @@ p {
         font-size: 20%;
         line-height: 100%;
     }
+}
+
+.social .icons text {
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px !important;
+}
+
+    .social .icons text:hover {
+        color: #FCBE1B;
+        cursor: pointer;
+    }
+
+#MyModal h4 {
+    color: #2A2B7B;
+    text-align: center;
+}
+
+    #MyModal h4:after {
+        width: 100px;
+        height: 2px;
+        background-color: #FCBE1B;
+        display: block;
+        content: "";
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+.modal-body .mybtns {
+    font-family: 'Arial',sans-serif;
+    font-size: 100%;
+    font-weight: 200;
+    color: #fff;
+    text-decoration: none;
+    padding: 3px 6px;
+    transition: all .7s;
 }

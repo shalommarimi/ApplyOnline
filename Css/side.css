@@ -2,8 +2,11 @@
 body{
     font-family: Arial, sans-serif;
 }
-.span {
+.menu-slider span {
     vertical-align:middle;
+    color: #FCBE1B;
+    cursor:pointer;
+    font-size:10px;
 }
 
 .sidenav {
@@ -13,7 +16,7 @@ body{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #FCBE1B;
+    background-color: #25283D;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -23,7 +26,7 @@ body{
         padding: 8px 8px 8px 32px;
         text-decoration: none;
         font-size: 20px;
-        color: #25283D;
+        color: #FCBE1B;
         display:flex;
         transition: 0.3s;
     }
@@ -48,4 +51,7 @@ body{
         .sidenav a {
             font-size: 18px;
         }
+}
+#up {
+    color:#fff;
 }

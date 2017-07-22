@@ -94,6 +94,8 @@
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -149,6 +151,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\animate.css" />
+    <Content Include="Css\carousel.css" />
     <Content Include="Css\index.css" />
     <Content Include="Css\media.css" />
     <Content Include="Css\partners.css" />
@@ -160,18 +163,6 @@
     <Content Include="Fonts\css\font-awesome.min.css" />
     <Content Include="Fonts\fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\3.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Images\4.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Images\Back.jpg" />
     <Content Include="Images\Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -180,6 +171,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\blue.png" />
+    <Content Include="Images\bluecard.png" />
+    <Content Include="Images\bluecard2.png" />
     <Content Include="Images\cloud.png" />
     <Content Include="Images\dvt.png" />
     <Content Include="Images\DVT_learnership_trainees.jpg">
@@ -195,6 +188,7 @@
     <Content Include="Images\mictseta_logo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\mict_seta.jpg" />
     <Content Include="Images\partners.png" />
     <Content Include="Images\Pp.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -205,11 +199,16 @@
     <Content Include="Images\prudence-mabitsela.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\saqa-logo.gif" />
     <Content Include="Images\sddefault.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\yellowcard.png" />
+    <Content Include="Images\yellowcard2.png" />
     <Content Include="Images\_fs_DVT_Learner_2.jpg" />
     <Content Include="MyScripts\jquery.cycle2.min.js" />
+    <Content Include="MyScripts\jquery.waterwheelCarousel.js" />
+    <Content Include="MyScripts\jquery.waterwheelCarousel.min.js" />
     <Content Include="MyScripts\jquery.waypoints.min.js" />
     <Content Include="MyScripts\waypoints.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -267,7 +266,9 @@
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -278,13 +279,25 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PostContentController.cs" />
     <Compile Include="Controllers\SyllabusController.cs" />
+    <Compile Include="DataContext\DataDbContext.cs" />
+    <Compile Include="DataContext\SeedDataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AnnouncementContent.cs" />
+    <Compile Include="Models\Applicant.cs" />
+    <Compile Include="Models\ApplicationField.cs" />
+    <Compile Include="Models\ApplicationType.cs" />
     <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\NewsContent.cs" />
+    <Compile Include="Models\PostsContent.cs" />
+    <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Notifications.cs" />
+    <Compile Include="Services\RegisterSubscriber.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -310,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\PostContent\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

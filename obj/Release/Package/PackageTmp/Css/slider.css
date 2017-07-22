@@ -9,24 +9,7 @@
     text-align: center;
 }
 
-.center {
-    margin: auto;
-    width: 60%;
-    border: 3px solid #FCBE1B;
-    padding: 10px;
-    background-color: #2A2B7B;
-}
 
-    .center:hover {
-        margin: auto;
-        width: 60%;
-        border: 3px solid #ffffff;
-        padding: 10px;
-    }
-
-    .center img {
-        width: 100%;
-    }
 
 .heading {
     text-align: center;
@@ -49,6 +32,8 @@
         margin: 0 auto;
         margin-top: 10px;
     }
+
+
 
 .section-map h3 {
     color: #ffffff;
@@ -106,24 +91,25 @@
 
 
 #map {
-   
     height: 400px;
     padding: 10px 20px;
     margin: auto;
-    width: 60%;
+    width: 100%;
     border: 3px solid #FCBE1B;
-    padding: 10px;
+ 
 }
 
 .field-validation-error {
     color: red;
 }
+
 .send-email h3 {
-     color: #ffffff;
+    color: #ffffff;
     font-family: 'Yantramanav', sans-serif;
     text-align: center;
 }
-.send-email h3:after {
+
+    .send-email h3:after {
         width: 100px;
         height: 2px;
         background-color: #FCBE1B;
@@ -132,3 +118,28 @@
         margin: 0 auto;
         margin-top: 10px;
     }
+
+
+
+.text-center text {
+    color: #FCBE1B;
+    font-size: 150%;
+}
+
+.text-center i {
+    color: #FCBE1B;
+}
+
+.text-center h3:after {
+    width: 100px;
+    height: 2px;
+    background-color: #FCBE1B;
+    display: block;
+    content: "";
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.text-center h3 {
+    color: #fff;
+}

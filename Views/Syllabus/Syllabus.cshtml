@@ -11,10 +11,15 @@
 <head>
     <title>MICT Seta Syllabus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/MyScripts/jquery.waterwheelCarousel.js"></script>
+    <script src="~/MyScripts/jquery.waterwheelCarousel.min.js"></script>
+    <link href="~/Css/carousel.css" rel="stylesheet" />
 
 </head>
 
 <body>
+    <div id="up"></div>
+
     <div class="body-content">
 
 
@@ -28,8 +33,11 @@
                 <a href="#email" class="scroll">Email Us</a>
             </div>
 
+            <div class="menu-slider">
+                <span onclick="openNav()">&#9776; MENU</span>
 
-            <span style="font-size:25px;cursor:pointer; color:#FCBE1B;" onclick="openNav()">&#9776; MENU</span>
+            </div>
+            
         </header>
 
         <section class="sylla-section">
@@ -37,15 +45,16 @@
 
             <h3 class="heading">MICT SETA - SAQA Qualifications</h3>
             <div class="center">
-                <div class="w3-content w3-display-container">
-                    <img class="mySlides" src="~/Images/1.png">
-                    <img class="mySlides" src="~/Images/2.png">
-                    <img class="mySlides" src="~/Images/3.png">
-                    <img class="mySlides" src="~/Images/4.png">
-                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="align-content:center">&#10094;</button>
-                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+                <div id="carousel">
+                    <img src="~/Images/bluecard.png" id="item-1" />
+                    <img src="~/Images/yellowcard.png" id="item-2" />
+                    <img src="~/Images/bluecard2.png" id="item-3" />
+                    <img src="~/Images/yellowcard2.png" id="item-4" />
+                    <img src="~/Images/bluecard.png" id="item-1" />
 
                 </div>
+                <a href="#" id="prev">Prev</a> | <a href="#" id="next">Next</a>
 
             </div>
 
@@ -65,7 +74,7 @@
 
 
             <div class="form-horizontal" id="email">
-                @using (Html.BeginForm("Syllabus", "Syllabus"))
+                @using (Html.BeginForm("Send", "Syllabus"))
             {
                     @Html.ValidationSummary()
 
@@ -118,6 +127,21 @@
 
 
     </section>
+    <section class="social" id="social">
+        <div class="text-center">
+            <h3 class="cont">Contact Information</h3>
+
+            <a href="#up" class="scroll fa fa-arrow-up"></a><br />
+            <text style="color:#fff;"><i class="fa fa-location-arrow">Location</i></text>
+            <p style="color:#fff;">219 Surrey Place, Randburg, 2109, Johannesburg</p>
+
+            <text style="color:#fff;"><i class="fa fa-phone">Call </i>  <i class="fa fa-envelope">Email</i></text>
+            <p style="color:#fff;">Office +27 (11) 759 5930 - info@dynamicdna.co.za</p>
+
+        </div>
+
+
+    </section>
 
 
     <script>
@@ -129,7 +153,45 @@
             document.getElementById("mySidenav").style.width = "0";
         }
     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var carousel = $("#carousel").waterwheelCarousel({
+                flankingItems: 3,
+                movingToCenter: function ($item) {
+                    $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+                },
+                movedToCenter: function ($item) {
+                    $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+                },
+                movingFromCenter: function ($item) {
+                    $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+                },
+                movedFromCenter: function ($item) {
+                    $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+                },
+                clickedCenter: function ($item) {
+                    $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+                }
+            });
 
+            $('#prev').bind('click', function () {
+                carousel.prev();
+                return false
+            });
+
+            $('#next').bind('click', function () {
+                carousel.next();
+                return false;
+            });
+
+            //$('#reload').bind('click', function () {
+            //    newOptions = eval("(" + $('#newoptions').val() + ")");
+            //    carousel.reload(newOptions);
+            //    return false;
+            //});
+
+        });
+    </script>
     <script>
         var slideIndex = 1;
         showDivs(slideIndex);
@@ -162,12 +224,12 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6I0udxhaIloq_3-9wDMJ6N_Fv45ZzBPQ&callback=myMap"></script>
     <script type="text/javascript">
-                jQuery(document).ready(function ($) {
-                    $(".scroll").click(function (event) {
-                        event.preventDefault();
-                        $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 2000);
-                    });
-                });
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 2000);
+            });
+        });
     </script>
 
 </body>
