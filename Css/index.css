@@ -57,6 +57,7 @@ img {
     border-radius: 9px;
     padding: 9px 18px;
     transition: all 0.7s;
+    margin:5px;
 }
 
     .btn:hover {

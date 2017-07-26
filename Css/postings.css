@@ -1,0 +1,18 @@
+﻿body {
+    
+}
+.container h3 {
+    color:#fcbe1b;
+    text-align:center;
+    font-family:Arial;
+}
+.container h3:after {
+   width: 100px;
+        height: 2px;
+        background-color: #FCBE1B;
+        display: block;
+        content: "";
+        margin: 0 auto;
+        margin-top: 10px;
+    
+}

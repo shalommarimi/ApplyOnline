@@ -50,11 +50,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -94,7 +94,6 @@
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -155,6 +154,7 @@
     <Content Include="Css\index.css" />
     <Content Include="Css\media.css" />
     <Content Include="Css\partners.css" />
+    <Content Include="Css\postings.css" />
     <Content Include="Css\side.css" />
     <Content Include="Css\slider.css" />
     <Content Include="Css\style.css" />
@@ -286,17 +286,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AnnouncementContent.cs" />
     <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\ApplicationField.cs" />
     <Compile Include="Models\ApplicationType.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Gender.cs" />
-    <Compile Include="Models\NewsContent.cs" />
-    <Compile Include="Models\PostsContent.cs" />
+    <Compile Include="Models\NewContent.cs" />
     <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Notifications.cs" />
+    <Compile Include="Services\PostLatest.cs" />
     <Compile Include="Services\RegisterSubscriber.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +313,7 @@
     <Content Include="Views\Contact\EmailUs.cshtml" />
     <Content Include="Views\Syllabus\Syllabus.cshtml" />
     <Content Include="Views\Authentication\AuthenticateUser.cshtml" />
+    <Content Include="Views\PostContent\News.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -323,7 +323,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\PostContent\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

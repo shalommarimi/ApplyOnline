@@ -9,7 +9,7 @@ namespace ApplyOnline.Services
     {
 
 
-        public void SendNewContent(string subject, string body)
+        public void SendNewContent(NewContent content)
         {
             using (var context = new DataDbContext())
             {
@@ -26,8 +26,8 @@ namespace ApplyOnline.Services
 
                             mail.To.Add(s.EmailAddress);
                             mail.From = new MailAddress("learnerslogsystem@gmail.com");
-                            mail.Subject = subject;
-                            mail.Body = body;
+                            mail.Subject = content.PostSubject;
+                            mail.Body = "Hi " + s.FirstName + " " + s.LastName + System.Environment.NewLine + content.PostBody + System.Environment.NewLine + "Date Posted: " + content.PostEntryDate;
                             mail.IsBodyHtml = true;
                             SmtpClient smtp = new SmtpClient();
                             smtp.Host = "smtp.gmail.com";
