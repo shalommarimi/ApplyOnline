@@ -20,10 +20,10 @@ namespace ApplyOnline.Controllers
 
             if (ModelState.IsValid == true)
             {
-                var postNews = new PostLatest();
 
                 content.PostEntryDate = System.DateTime.Now;
 
+                var postNews = new PostLatest();
                 postNews.NewsPost(content);
 
                 //Send Notifications

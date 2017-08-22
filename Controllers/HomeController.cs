@@ -29,21 +29,25 @@ namespace ApplyOnline.Controllers
             {
                 using (var dbContext = new DataDbContext())
                 {
-                    var isExist = dbContext.Subscribers.SingleOrDefault(e => e.EmailAddress == subscribe.EmailAddress);
-                    if (isExist != null)
+
+
+                    if (dbContext.Subscribers.Any(t => t.EmailAddress.Equals(subscribe.EmailAddress)))
                     {
+
+                        ViewBag.Error = "The email \"" + subscribe.EmailAddress + "\" already exists!";
+                        ModelState.Clear();
+                        return View("Index");
+
+                    }
+                    else
+                    {
+
                         var registerSubscriber = new RegisterSubscriber();
                         registerSubscriber.Register(subscribe);
 
 
 
                         ViewBag.Message = "Thank you for subscribing " + subscribe.FirstName + "!";
-                        ModelState.Clear();
-                        return View("Index");
-                    }
-                    else
-                    {
-                        ViewBag.Error = "The email \"" + subscribe.EmailAddress + "\" already exists!";
                         ModelState.Clear();
                         return View("Index");
                     }

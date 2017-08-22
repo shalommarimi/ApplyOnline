@@ -171,6 +171,7 @@
     <Content Include="Images\apple4.jpg" />
     <Content Include="Images\apple6.jpg" />
     <Content Include="Images\Back.jpg" />
+    <Content Include="Images\back2.jpg" />
     <Content Include="Images\Background.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
