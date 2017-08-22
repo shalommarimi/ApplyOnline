@@ -8,7 +8,9 @@ namespace ApplyOnline.DataAccessLayer
         [Key]
         public int PkGenderId { get; set; }
         public string GenderValue { get; set; }
-        public List<Applicant> Applicant { get; set; }
+        public List<PersonalInformation> Applicant { get; set; }
         // public List<Subscribe> Subscriber { get; set; }
+
     }
+
 }

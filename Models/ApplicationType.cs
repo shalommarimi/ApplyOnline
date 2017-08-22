@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ApplyOnline.DataAccessLayer;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApplyOnline.Models
 {
@@ -10,5 +12,6 @@ namespace ApplyOnline.Models
         [Required]
         [Display(Name = "Application Type Name")]
         public string ApplicationTypeName { get; set; }
+        public List<PersonalInformation> Applicant { get; set; }
     }
 }

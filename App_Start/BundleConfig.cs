@@ -46,7 +46,9 @@ namespace ApplyOnline.App_Start
                 "~/Css/slider.css",
                 "~/Css/side.css",
                 "~/Css/partners.css",
-                "~/Css/postings.css"
+                "~/Css/postings.css",
+                "~/Css/dashboard.css",
+                 "~/Css/login.css"
 
                 ));
             BundleTable.EnableOptimizations = true;

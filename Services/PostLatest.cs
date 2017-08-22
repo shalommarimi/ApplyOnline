@@ -21,7 +21,7 @@ namespace ApplyOnline.Services
 
 
                     };
-                    context.NewsContent.Add(objNewsContent);
+                    context.NewContent.Add(objNewsContent);
                     context.SaveChanges();
 
                 }

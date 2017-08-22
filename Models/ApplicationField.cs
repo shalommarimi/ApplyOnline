@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ApplyOnline.DataAccessLayer;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApplyOnline.Models
 {
@@ -14,5 +16,7 @@ namespace ApplyOnline.Models
         [Required]
         [Display(Name = "Field Code")]
         public string FieldCode { get; set; }
+
+        public List<PersonalInformation> Applicant { get; set; }
     }
 }

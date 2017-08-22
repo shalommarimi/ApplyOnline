@@ -1,6 +1,12 @@
-﻿
+﻿@model ApplyOnline.Models.Subscribe
+
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var gender = new SelectList(new string[] { "1", "2", "3" });
+
+
 }
 
 
@@ -11,7 +17,7 @@
 <head>
     <title>Dynamic DNA Online Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+
 
 
 </head>
@@ -35,6 +41,7 @@
                     <li><a href="#ins" class="scroll">Our Insights</a></li>
                     <li>@Html.ActionLink("Information", "Syllabus", "Syllabus")</li>
                     <li><a href="#part" class="scroll">Partnerships</a></li>
+                    <li>@Html.ActionLink("Login", "Login", "Authenticate")</li>
                     <li><a href="#social" class="scroll"><abbr class="fa fa-thumbs-up">Like Us</abbr></a></li>
 
 
@@ -53,11 +60,102 @@
                 </section>
 
                 <section class="os-animation" data-os-animation="bounceInUp" data-os-animation-delay=".5s">
-                    <a class="btn" href="@Url.Action("AuthenticateUser","Authentication")">Apply Now</a>
+                    <a class="btn" href="@Url.Action("ApplicationProcess","Apply")">Apply Now</a>
                 </section>
             </div>
 
         </div>
+
+
+        <div id="MyModal" class="modal fade" role="dialog">
+
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            <h4>Subscribe</h4>
+
+
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-horizontal">
+                            @using (Html.BeginForm("Register", "Home"))
+            {
+                                @Html.ValidationSummary()
+
+
+                                <fieldset>
+                                    <div class="form-group">
+
+
+                                        @Html.LabelFor(model => model.FirstName, new { @class = "col-sm-4" })
+
+                                        <div class="col-sm-3">
+                                            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", @placeholder = "Enter Your First Name" })
+                                            @Html.ValidationMessageFor(model => model.FirstName)
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+
+                                        @Html.LabelFor(model => model.LastName, new { @class = "col-sm-4" })
+
+                                        <div class="col-sm-3">
+                                            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", @placeholder = "Enter Your Last Name" })
+                                            @Html.ValidationMessageFor(model => model.LastName)
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group ">
+
+                                        @Html.LabelFor(model => model.FkGenderId, new { @class = "col-sm-4" })
+
+                                        <div class="col-sm-3">
+                                            @Html.DropDownListFor(model => model.FkGenderId, gender, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.FkGenderId)
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+
+                                        @Html.LabelFor(model => model.EmailAddress, new { @class = "col-sm-4" })
+                                        <div class="col-sm-3">
+                                            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", @placeholder = "Enter Your Email Address" })
+                                            @Html.ValidationMessageFor(model => model.EmailAddress)
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <div class="mybtns">
+
+                                        <input type="submit" name="submit" class="btn" value="Subscribe" />
+                                        <input type="reset" name="submit" class="btn" value="Reset" />
+
+                                    </div>
+                                </fieldset>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="close" type="button" data-dismiss="modal"><i class="fa fa-window-close"></i></button>
+                </div>
+            </div>
+        </div>
+
 
 
     </section>
@@ -66,6 +164,10 @@
 
         <section class="announcements" id="ann">
             <h2>Announcements</h2>
+            @*<div class="alert alert-success">
+                    <strong>Success</strong>
+                </div>*@
+
             <p class="parag">
                 Learnership Programme. Are you unemployed , looking for a learnership in information Technology and programming , want to become employable and apply the skills learnt? want to get a travel allowance while you study? , if the answer is yes then email us your cv, id copy and matric certificate to be considered. email to info@dynamicdna.co.za the subject line should be Learnership. Get this once in a lifetime opportunity. The purpose of the programme is to equip previously disadvantaged youths with nationally recognised qualifications, based on unit standards, while also providing them with workplace experience in the Systems Development landscape.Successful candidates who show dedication to the programme will be considered for a following Higher NQF level qualification, it is of utmost importance that learners give 100% dedication to this programme.
             </p>
@@ -166,7 +268,7 @@
 
                 <span class="cycle-prev">&#9001;</span>
                 <span class="cycle-next">&#9002;</span>
-                <span class="cycle-pager"></span>
+                @*<span class="cycle-pager"></span>*@
 
                 <img src="~/Images/blue.png" />
                 <img src="~/Images/partners.png" />
@@ -200,7 +302,8 @@
                     <a href="#" class="fa fa-youtube"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#landing" class="scroll fa fa-home"></a>
-                    <text class="text-sub" onclick="subscribe()">Subscribe</></text>
+                    <text class="text-sub" data-toggle="modal" data-target="#MyModal">Subscribe</></text>
+                    @Html.ActionLink("Log In", "Dashboard", "Administrator")
                 </div>
 
             </div>
@@ -209,11 +312,12 @@
         </section>
 
     </div>
+
     <section class="section-footer">
         <footer>
             <p>
                 &copy; 2010
-                <script>new Date().getFullYear() > 2010 && document.write("- " + new Date().getFullYear());</script> Dynamic DNA PTY LTD
+                <script>new Date().getFullYear() > 2010 && document.write("- " + new Date().getFullYear());</script> Dynamic DNA, DTH Group
             </p>
 
             <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -227,11 +331,7 @@
             </script>
         </footer>
     </section>
-    <script>
-        function subscribe() {
-            alert("You are about to subscribe to our News letter and posts as they become available")
-        }
-    </script>
+
 
 </body>
 

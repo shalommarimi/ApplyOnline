@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard</title>
+
+</head>
+
+<body class="dashboard">
+
+
+
+    <div class="container">
+        <h3>Administrator Dashboard</h3>
+        <div class="panel panel-admin">
+            <div class="panel-heading">Logged in as:</div>
+            <div class="panel-body">
+
+                <ul>
+                   
+                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"  onclick="location.href='@Url.Action("Content", "PostContent")'"><i class="fa fa-pencil-square-o fa-3x"></i><span>New Entry</span></button></li>
+                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-user fa-3x"></i><span> Applicants</span></button></li>
+                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-check-square-o fa-3x"></i><span> Subscribers</span></button></li>
+                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-newspaper-o fa-3x"></i><span> News</span></button></li>
+                     <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-bell-o fa-3x"></i><span> Annotate</span></button></li>
+                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-briefcase fa-3x"></i><span> Internship</span></button></li>
+                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-leanpub fa-3x"></i><span> Learnership</span></button></li>
+                     <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-briefcase fa-3x"></i><span> Jobs</span></button></li>
+
+                </ul>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

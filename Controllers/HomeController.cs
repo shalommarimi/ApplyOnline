@@ -1,5 +1,7 @@
-﻿using ApplyOnline.Models;
+﻿using ApplyOnline.DataContext;
+using ApplyOnline.Models;
 using ApplyOnline.Services;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
@@ -7,28 +9,53 @@ namespace ApplyOnline.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+
+
+
         public ActionResult Index()
         {
             return View();
         }
 
+
+
         [HttpPost]
+
         public ViewResult Register(Subscribe subscribe)
         {
 
 
             if (ModelState.IsValid)
             {
+                using (var dbContext = new DataDbContext())
+                {
+                    var isExist = dbContext.Subscribers.SingleOrDefault(e => e.EmailAddress == subscribe.EmailAddress);
+                    if (isExist != null)
+                    {
+                        var registerSubscriber = new RegisterSubscriber();
+                        registerSubscriber.Register(subscribe);
 
-                var registerSubscriber = new RegisterSubscriber();
-                registerSubscriber.Register(subscribe);
 
-                ViewBag.Success = "Successfully Subscribed, Thank You!";
-                return View("Index");
+
+                        ViewBag.Message = "Thank you for subscribing " + subscribe.FirstName + "!";
+                        ModelState.Clear();
+                        return View("Index");
+                    }
+                    else
+                    {
+                        ViewBag.Error = "The email \"" + subscribe.EmailAddress + "\" already exists!";
+                        ModelState.Clear();
+                        return View("Index");
+                    }
+                }
+
+
             }
             else
             {
-                return View(ViewBag.Error = "Could not Subscribe User");
+                ViewBag.Error = "Sorry! Could not subscribe User ";
+                return View("Index");
+
             }
 
         }

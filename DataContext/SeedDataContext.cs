@@ -10,6 +10,18 @@ namespace ApplyOnline.DataContext
         protected override void Seed(DataDbContext context)
         {
 
+            IList<Population> population = new List<Population>();
+            population.Add(new Population() { PopulationValue = "African" });
+            population.Add(new Population() { PopulationValue = "White" });
+            population.Add(new Population() { PopulationValue = "Coloured" });
+            population.Add(new Population() { PopulationValue = "Indian" });
+
+
+            foreach (Population pop in population)
+                context.Populations.Add(pop);
+
+
+
             IList<Gender> genders = new List<Gender>();
             genders.Add(new Gender() { GenderValue = "Male" });
             genders.Add(new Gender() { GenderValue = "Female" });
@@ -17,6 +29,34 @@ namespace ApplyOnline.DataContext
 
             foreach (Gender gen in genders)
                 context.Gender.Add(gen);
+
+
+
+            IList<Nationality> nationality = new List<Nationality>();
+            nationality.Add(new Nationality() { NationaityValue = "South African" });
+            nationality.Add(new Nationality() { NationaityValue = "Zimbabwen" });
+            nationality.Add(new Nationality() { NationaityValue = "Angolian" });
+            nationality.Add(new Nationality() { NationaityValue = "Limpopian" });
+
+
+
+            foreach (Nationality nat in nationality)
+                context.Nationalities.Add(nat);
+
+
+            IList<MaritalStatus> maritalstatus = new List<MaritalStatus>();
+            maritalstatus.Add(new MaritalStatus() { MaritalStatusValue = "Single" });
+            maritalstatus.Add(new MaritalStatus() { MaritalStatusValue = "Married" });
+            maritalstatus.Add(new MaritalStatus() { MaritalStatusValue = "Seperated" });
+            maritalstatus.Add(new MaritalStatus() { MaritalStatusValue = "Complicated" });
+
+
+
+            foreach (MaritalStatus marriage in maritalstatus)
+                context.MaritalStatus.Add(marriage);
+
+
+
             IList<ApplicationType> applicationType = new List<ApplicationType>();
             applicationType.Add(new ApplicationType() { ApplicationTypeName = "Internship" });
             applicationType.Add(new ApplicationType() { ApplicationTypeName = "Learnership" });

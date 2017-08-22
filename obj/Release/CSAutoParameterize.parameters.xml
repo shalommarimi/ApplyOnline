@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="DataDbContext-Web.config Connection String" description="DataDbContext Connection String used in web.config by the application to access the database." defaultValue="server=.; Database=Applicants; integrated security = true" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Smarimi\\Documents\\Visual\ Studio\ 2015\\Projects\\ApplyOnline\\ApplyOnline\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataDbContext']/@connectionString" />
+  </parameter>
+</parameters>

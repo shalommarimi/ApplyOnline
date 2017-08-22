@@ -62,4 +62,3 @@ C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\b
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Pp.jpg
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\Premise.jpg
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\prudence-mabitsela.jpg
-C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\Images\sddefault.jpg

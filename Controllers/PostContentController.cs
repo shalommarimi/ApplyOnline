@@ -7,7 +7,7 @@ namespace ApplyOnline.Controllers
     public class PostContentController : Controller
     {
         // GET: PostContent
-        public ActionResult News()
+        public ActionResult Content()
         {
             return View();
         }
@@ -31,12 +31,12 @@ namespace ApplyOnline.Controllers
                 notify.SendNewContent(content);
 
 
-                return View("News");
+                return View("Content");
 
             }
             else
             {
-                return View("News");
+                return View("Content");
             }
 
 

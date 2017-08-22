@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <div> 
+        @if (Session["Username"]!=null)
+        {
+            <h1>Hello @Session["Username"].ToString()</h1>
+        }
+    </div>
+</body>
+</html>

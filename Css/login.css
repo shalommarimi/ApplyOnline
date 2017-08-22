@@ -1,0 +1,85 @@
+﻿.login-section {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-image: url('../Images/apple4.jpg');
+    display: table;
+    top: 0;
+    background-size: cover;
+}
+
+#login {
+    margin: 0 auto;
+    margin-top: 190px;
+    vertical-align: middle;
+    width: 450px;
+    height: 385px;
+    text-align: center;
+    background-color: rgb(42, 43, 123);
+    opacity: 0.7;
+    border-radius: 4px;
+}
+
+.login-section .form-control {
+    content: "\f007";
+    margin-left: 80px;
+    text-align: left;
+    font-family: "FontAwesome";
+    color: #fcbe1b;
+    background-color: #ffffff;
+    padding-top: 7px;
+    font-size: medium;
+}
+
+#forgotpassword p {
+    font-size: large;
+}
+
+#forgotpassword a {
+    color: #FCBE1B;
+}
+
+#login img {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-bottom: 6px;
+}
+
+hr {
+    border-top-color: #FCBE1B;
+}
+
+
+
+.text-danger {
+    color: red;
+}
+
+ul {
+    list-style: none;
+    margin: 10px;
+}
+
+#btn {
+    padding: 5px 90px;
+}
+
+.login-section h3 {
+    color: #fcbe1b;
+    font-family: 'Yantramanav', sans-serif;
+    text-align: center;
+    font-size: 200%;
+    padding-top: 50px;
+}
+
+
+    .login-section h3:after {
+        width: 120px;
+        height: 2px;
+        background-color: #2A2B7B;
+        display: block;
+        content: "";
+        margin: 0 auto;
+    }
