@@ -319,6 +319,7 @@
     <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Models\WorkExprience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\Hashing.cs" />
     <Compile Include="Services\Notifications.cs" />
     <Compile Include="Services\PostLatest.cs" />

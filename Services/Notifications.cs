@@ -2,6 +2,7 @@
 using ApplyOnline.Models;
 using System.Linq;
 using System.Net.Mail;
+using System.Text;
 
 namespace ApplyOnline.Services
 {
@@ -23,11 +24,14 @@ namespace ApplyOnline.Services
                     {
                         using (var mail = new MailMessage())
                         {
-
+                            var stringBuilder = new StringBuilder();
                             mail.To.Add(s.EmailAddress);
                             mail.From = new MailAddress("learnerslogsystem@gmail.com");
                             mail.Subject = content.PostSubject;
-                            mail.Body = "Hi " + s.FirstName + " " + s.LastName + System.Environment.NewLine + content.PostBody + System.Environment.NewLine + "Date Posted: " + content.PostEntryDate;
+                            stringBuilder.Append("Hi " + s.FirstName + " " + s.LastName + "<br></br>");
+                            stringBuilder.Append("<br></br>" + content.PostBody + "<br></br>");
+                            stringBuilder.Append("<br></br>" + "Date Posted: " + content.PostEntryDate);
+                            mail.Body = stringBuilder.ToString();
                             mail.IsBodyHtml = true;
                             SmtpClient smtp = new SmtpClient();
                             smtp.Host = "smtp.gmail.com";
@@ -48,13 +52,6 @@ namespace ApplyOnline.Services
 
             }
         }
-
-
-
-
-
-
-
 
     }
 
