@@ -23,5 +23,7 @@ namespace ApplyOnline.DataContext
         public virtual DbSet<Nationality> Nationalities { get; set; }
         public virtual DbSet<QualLevel> QualLevels { get; set; }
         public virtual DbSet<Population> Populations { get; set; }
+        public virtual DbSet<MediaFiles> MediaFyles { get; set; }
+
     }
 }

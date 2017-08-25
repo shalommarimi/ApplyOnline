@@ -306,6 +306,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MediaFiles.cs" />
     <Compile Include="Models\MaritalStatus.cs" />
     <Compile Include="Models\Nationality.cs" />
     <Compile Include="Models\PersonalInformation.cs" />

@@ -137,6 +137,7 @@ namespace ApplyOnline.DataAccessLayer
 
         public List<WorkExprience> WorkExperiences { get; set; }
         public List<Qualification> Qualifications { get; set; }
+        public List<MediaFiles> MediaFile { get; set; }
         public List<Reference> References { get; set; }
         public List<ResetPasswordRequest> ResetPasswordRequests { get; set; }
 
