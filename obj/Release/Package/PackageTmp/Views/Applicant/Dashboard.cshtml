@@ -12,9 +12,9 @@
 </head>
 <body>
     <div> 
-        @if (Session["Username"]!=null)
+        @if (Session["FirstName"]!=null && Session["LastName"]!=null)
         {
-            <h1>Hello @Session["Username"].ToString()</h1>
+            <h1>Hello @Session["FirstName"].ToString() @Session["LastName"].ToString()</h1>
         }
     </div>
 </body>

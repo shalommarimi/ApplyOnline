@@ -1,4 +1,5 @@
 ﻿using ApplyOnline.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -33,9 +34,11 @@ namespace ApplyOnline.DataAccessLayer
         [ForeignKey("FkGenderId")]
         public Gender Gender { get; set; }
 
+        [Display(Name = "Date Of Birth")]
+        public DateTime DOB { get; set; }
+
         [Required]
         [Display(Name = "Identity Number")]
-        [MaxLengthAttribute]
         public string IdNumber { get; set; }
 
         [Display(Name = "Nationality")]
@@ -52,7 +55,6 @@ namespace ApplyOnline.DataAccessLayer
         [Required]
         //[Phone]
         [Display(Name = "Contact Number")]
-        //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Entered phone format is not valid.")]
         public int CellNumber { get; set; }
 
         [Required]
@@ -134,12 +136,13 @@ namespace ApplyOnline.DataAccessLayer
 
 
         public List<WorkExprience> WorkExperiences { get; set; }
+        public List<Qualification> Qualifications { get; set; }
         public List<Reference> References { get; set; }
-        public List<Education> Educations { get; set; }
-        public List<PasswordCredential> PasswordCredentials { get; set; }
+        public List<ResetPasswordRequest> ResetPasswordRequests { get; set; }
 
 
     }
+
 
 
 

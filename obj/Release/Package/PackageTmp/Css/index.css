@@ -10,7 +10,8 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-image: url(../Images/homepage_develop_background.jpg);
+    /*background-image: url(../Images/homepage_develop_background.jpg);*/
+     background-image: url(../Images/finalback.jpg);
     background-attachment: fixed!important;
     background-size: cover;
 }
@@ -239,6 +240,7 @@ h2:after {
 
 .section-partnership {
     background-color: #ffffff;
+
 }
 
 .section-insights {

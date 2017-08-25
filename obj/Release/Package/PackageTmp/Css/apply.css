@@ -1,0 +1,11 @@
+﻿.section-apply {
+    background-image: url('../Images/finalback.jpg')!important;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.btn:hover {
+        color: #2A2B7B;
+        border: solid #ffffff 2px;
+        background-color: #FCBE1B;
+    }

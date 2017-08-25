@@ -34,7 +34,7 @@ namespace ApplyOnline.Controllers
                 try
                 {
                     var hashInputPassword = new Hashing();
-                    string inPuttedPassword = hashInputPassword.HashInput(userInput.New_Password);
+                    string inPuttedPassword = hashInputPassword.HashPassword(userInput.New_Password);
 
 
                     var user = context.PersonalInformations.Single(u => u.New_Password == inPuttedPassword && u.Username == userInput.Username);

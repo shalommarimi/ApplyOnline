@@ -5,14 +5,14 @@ namespace ApplyOnline.Services
 {
     public class Hashing
     {
-        private string salt = "Thisismydefaultsaltwithsomespicesandherbs";
-        public string HashInput(string input)
+
+        public string HashPassword(string input)
         {
 
             byte[] hash;
             using (var sha1CryptoServiceProvider = new SHA1CryptoServiceProvider())
             {
-                hash = sha1CryptoServiceProvider.ComputeHash(Encoding.Unicode.GetBytes(input + salt));
+                hash = sha1CryptoServiceProvider.ComputeHash(Encoding.Unicode.GetBytes(input + "SHA1"));
             }
             var stringBuilder = new StringBuilder();
 

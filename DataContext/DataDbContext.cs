@@ -20,7 +20,7 @@ namespace ApplyOnline.DataContext
         public virtual DbSet<NewContent> NewContent { get; set; }
         public DbSet<PasswordCredential> PasswordCredentials { get; set; }
         public DbSet<MaritalStatus> MaritalStatus { get; set; }
-
+        public DbSet<Qualification> Qualifications { get; set; }
         public DbSet<Nationality> Nationalities { get; set; }
 
         public DbSet<Population> Populations { get; set; }

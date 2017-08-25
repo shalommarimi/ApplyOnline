@@ -10,6 +10,8 @@ namespace ApplyOnline.DataContext
         protected override void Seed(DataDbContext context)
         {
 
+
+
             IList<Population> population = new List<Population>();
             population.Add(new Population() { PopulationValue = "African" });
             population.Add(new Population() { PopulationValue = "White" });

@@ -150,6 +150,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Css\animate.css" />
+    <Content Include="Css\apply.css" />
     <Content Include="Css\carousel.css" />
     <Content Include="Css\dashboard.css" />
     <Content Include="Css\index.css" />
@@ -193,6 +194,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\favicon-16x16.ico" />
+    <Content Include="Images\finalback.jpg" />
     <Content Include="Images\homepage_develop_background.jpg" />
     <Content Include="Images\imageedit_1_7941327098.png" />
     <Content Include="Images\imageedit_3_3248595565.png" />
@@ -313,9 +315,10 @@
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\NewContent.cs" />
-    <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Population.cs" />
+    <Compile Include="Models\Qualification.cs" />
     <Compile Include="Models\Reference.cs" />
+    <Compile Include="Models\ResetPasswordRequest.cs" />
     <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Models\WorkExprience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

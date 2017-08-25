@@ -1,9 +1,9 @@
 ﻿.login-section {
-    height: 100%;
-    width: 100%;
+    height: 100% !important;
+    width: 100% !important;
     margin: auto;
     background-repeat: no-repeat;
-    background-image: url('../Images/back2.jpg');
+    background-image: url('../Images/finalback.jpg');
     display: table;
     top: 0;
     background-size: cover;
@@ -66,20 +66,21 @@ ul {
     padding: 5px 90px;
 }
 
-.login-section h3 {
+.heading3 h3 {
     color: #fcbe1b;
     font-family: 'Yantramanav', sans-serif;
     text-align: center;
     font-size: 200%;
     padding-top: 50px;
+    text-transform:uppercase;
 }
 
 
-    .login-section h3:after {
+    .heading3 h3:after {
         width: 120px;
         height: 2px;
         background-color: #2A2B7B;
         display: block;
         content: "";
-        margin: 0 auto;
+        margin: 2px auto;
     }
