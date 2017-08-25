@@ -306,7 +306,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\PasswordCredentials.cs" />
     <Compile Include="Models\MaritalStatus.cs" />
     <Compile Include="Models\Nationality.cs" />
     <Compile Include="Models\PersonalInformation.cs" />
@@ -317,6 +316,7 @@
     <Compile Include="Models\NewContent.cs" />
     <Compile Include="Models\Population.cs" />
     <Compile Include="Models\Qualification.cs" />
+    <Compile Include="Models\QualLevel.cs" />
     <Compile Include="Models\Reference.cs" />
     <Compile Include="Models\ResetPasswordRequest.cs" />
     <Compile Include="Models\Subscribe.cs" />

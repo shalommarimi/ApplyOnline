@@ -11,6 +11,24 @@ namespace ApplyOnline.DataContext
         {
 
 
+            IList<QualLevel> qualificationLevel = new List<QualLevel>();
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Certificate" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Higher Certificate" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Advanced Certificate" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "National Certificate" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Diploma" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "National Diploma" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Post Graduate Diploma" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Advanced Diploma" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Bachelor Degrees" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = " Baccalaureus Technologiae Degrees" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Honours Degrees" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "Masters" });
+            qualificationLevel.Add(new QualLevel() { QualLevelValue = "PhD" });
+
+
+            foreach (QualLevel qua in qualificationLevel)
+                context.QualLevels.Add(qua);
 
             IList<Population> population = new List<Population>();
             population.Add(new Population() { PopulationValue = "African" });

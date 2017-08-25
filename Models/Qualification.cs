@@ -18,7 +18,10 @@ namespace ApplyOnline.Models
 
 
         [Display(Name = "Qualification Level")]
-        public string QualLevel { get; set; }
+        public int fKQualLevel { get; set; }
+        public QualLevel QualLevels { get; set; }
+
+
 
         [Display(Name = "Institution")]
         public string Institution { get; set; }
