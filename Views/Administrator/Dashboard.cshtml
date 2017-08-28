@@ -5,7 +5,7 @@
 @model ApplyOnline.Models.NewContent
 
 @{
-   
+
     var Posttypes = new SelectList(new string[] { "DDNA News", "DDNA Announcement", "DDNA Learnership Programme", "DDNA Internship Programme" });
 }
 <!DOCTYPE html>
@@ -18,32 +18,54 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="~/MyScripts/main.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <link href="~/Css/admindash.css" rel="stylesheet" />
+
+
+
     <script type="text/javascript">
 
-   $(function() {
-       $('#attach_box').click(function() {
-           $('#sec_box').show();
-           return false;
-       });
-   });
+        $(function () {
+            $('#attach_box').click(function () {
+                $('#sec_box').show();
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+
+        $(function () {
+            $('#message').click(function () {
+                $('#sec_box2').show();
+                return false;
+            });
+        });
     </script>
 
 
 </head>
 <body>
     <div class="header">
+       
         <div class="logo">
-            <span>DDNA</span><br />
+            <span>DDNA</span>
             <span>Administrator</span>
+           
         </div>
         <a href="#" class="nav-trigger"><span></span></a>
+                
     </div>
+
     <div class="side-nav">
+        @if (Session["FirstName"] != null && Session["LastName"] != null)
+            {
+            <h5 class="user-logged">Administrator User: @Session["FirstName"].ToString() @Session["LastName"].ToString()</h5>
+        }
         <div class="logo">
             <span>DDNA</span><br />
             <span>Administrator</span>
@@ -57,43 +79,43 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="message">
                         <span><i class="fa fa-envelope"></i></span>
                         <span>Messages</span>
                     </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#">
                         <span><i class="fa fa-bar-chart"></i></span>
                         <span>Statistics</span>
                     </a>
                 </li>
-                <li>
+                <li class="active">
                     <a href="#" id="attach_box">
                         <span><i class="fa fa-pencil-square"></i></span>
                         <span>New Entry</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="attach_box">
+                    <a href="#">
                         <span><i class="fa fa-briefcase"></i></span>
                         <span>Vacancies</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="attach_box">
+                    <a href="#">
                         <span><i class="fa fa-bullhorn"></i></span>
                         <span>Announcements</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#1" id="attach_box">
+                    <a href="#">
                         <span><i class="fa fa-newspaper-o"></i></span>
                         <span>News</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="attach_box">
+                    <a href="#">
                         <span><i class="fa fa-check-square"></i></span>
                         <span>Subscribers</span>
                     </a>
@@ -105,9 +127,30 @@
     <div class="main-content">
 
 
+
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong>@ViewBag.Success
+            </div>
+
+        }
+        @if (ViewBag.Error != null)
+        {
+
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Oops!</strong>@ViewBag.Error
+            </div>
+        }
+
+
+
+
         <div id="sec_box" style="display: none;">
             <div class="title">
-                <h3>New Post|Entry</h3>
+                <h3>Make a new entry</h3>
             </div>
 
             @using (Html.BeginForm("PostNews", "PostContent"))
@@ -122,25 +165,25 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.PostType, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.DropDownListFor(model => model.PostType, Posttypes, new { @class = "form-control" })
+                        <div class="col-xs-4">
+                            @Html.DropDownListFor(model => model.PostType, Posttypes, new { @class = "form-control col-xs-4" })
                             @Html.ValidationMessageFor(model => model.PostType, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.PostSubject, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.PostSubject, new { htmlAttributes = new { @class = "form-control" } })
+                        <div class="col-xs-4">
+                            @Html.EditorFor(model => model.PostSubject, new { htmlAttributes = new { @class = "form-control col-xs-4" } })
                             @Html.ValidationMessageFor(model => model.PostSubject, "", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.PostBody, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
+                        <div class="col-xs-4">
                             <div class="mailbody">
-                                @Html.TextAreaFor(model => model.PostBody, new { @class = "form-control" })
+                                @Html.TextAreaFor(model => model.PostBody, new { @class = "form-control col-xs-4" })
                             </div>
 
                             @Html.ValidationMessageFor(model => model.PostBody, "", new { @class = "text-danger" })
@@ -149,8 +192,8 @@
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.PostEntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.PostEntryDate, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @placeholder = System.DateTime.Now } })
+                        <div class="col-xs-4">
+                            @Html.EditorFor(model => model.PostEntryDate, new { htmlAttributes = new { @class = "form-control col-xs-4", disabled = "disabled", @readonly = "readonly", @placeholder = System.DateTime.Now } })
                             @Html.ValidationMessageFor(model => model.PostEntryDate, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -159,6 +202,7 @@
                         <div class="col-md-offset-2 col-md-10">
                             <input type="submit" value="Publish" class="btn" />
                             <input type="reset" value="Reset" class="btn" />
+
                         </div>
                     </div>
                 </div>
@@ -168,8 +212,34 @@
 
         </div>
 
+        <div class="sec_box2 style="display: none;"">
+            <div id="title">Send Email</div>
+
+            derfr
+            rf
+            rf
+            rf
+            rfr
+            f
+            rf
+            rf
+            r
+            fr
+            fr
+            fr
+            fr
+            r
+            r
+            f
+            rf
+            rf
+            rf
+            rf
+            r
         </div>
 
-   
+    </div>
+
+
 </body>
 </html>

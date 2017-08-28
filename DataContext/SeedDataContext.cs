@@ -11,6 +11,15 @@ namespace ApplyOnline.DataContext
         {
 
 
+            IList<AdministrationCredentials> admin = new List<AdministrationCredentials>();
+            admin.Add(new AdministrationCredentials() { FirstName = "Shalom", LastName = "Marimi", Username = "shalom@gmail.com", Password = "Lulama.01" });
+            admin.Add(new AdministrationCredentials() { FirstName = "Lucky", LastName = "Mathebula", Username = "lucky@gmail.com", Password = "Lucky.01" });
+
+
+            foreach (AdministrationCredentials adm in admin)
+                context.Admin.Add(adm);
+
+
             IList<QualLevel> qualificationLevel = new List<QualLevel>();
             qualificationLevel.Add(new QualLevel() { QualLevelValue = "Certificate" });
             qualificationLevel.Add(new QualLevel() { QualLevelValue = "Higher Certificate" });

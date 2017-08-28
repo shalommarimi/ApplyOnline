@@ -10,14 +10,12 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
-    /*background-image: url(../Images/homepage_develop_background.jpg);*/
-     background-image: url(../Images/finalback.jpg);
-    background-attachment: fixed!important;
+    background-image: url(../Images/finalback.jpg);
+    background-attachment: fixed !important;
     background-size: cover;
 }
 
 .intro {
-    /*HomePage*/
     height: 100%;
     width: 100%;
     margin: auto;
@@ -123,7 +121,6 @@ h2:after {
 }
 
 .partners {
-    /*background-color: #ffffff;*/
     font-family: 'Yantramanav', sans-serif;
     color: #ffffff;
 }
@@ -132,8 +129,6 @@ h2:after {
     background-color: transparent;
     font-family: 'Yantramanav', sans-serif;
     color: #FCBE1B;
-    /*background-image: url('../Images/BBD-Custom-Login.png');*/
-    /*background-attachment: fixed;*/
 }
 
 .section-insights h2:after {
@@ -240,7 +235,6 @@ h2:after {
 
 .section-partnership {
     background-color: #ffffff;
-
 }
 
 .section-insights {
@@ -353,6 +347,21 @@ p {
         margin-top: 10px;
     }
 
+#MyModalAdmin h4 {
+    color: #2A2B7B;
+    text-align: center;
+}
+
+    #MyModalAdmin h4:after {
+        width: 100px;
+        height: 2px;
+        background-color: #FCBE1B;
+        display: block;
+        content: "";
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
 .modal-body .mybtns {
     font-family: 'Arial',sans-serif;
     font-size: 75%;
@@ -362,12 +371,13 @@ p {
     padding: 3px 6px;
     transition: all .7s;
 }
+
 #cvsection {
-    color:#2A2B7B;
-    text-align:center;
-    
+    color: #2A2B7B;
+    text-align: center;
 }
- #cvsection h3:after {
+
+    #cvsection h3:after {
         width: 100px;
         height: 2px;
         background-color: #FCBE1B;

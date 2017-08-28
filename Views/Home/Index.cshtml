@@ -78,7 +78,7 @@
 
                     <div class="alert alert-danger">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Oops!</strong>@ViewBag.Error.
+                        <strong>Oops!</strong>@ViewBag.Error
                     </div>
                 }
             </div>
@@ -183,9 +183,7 @@
 
         <section class="announcements" id="ann">
             <h2>Announcements</h2>
-            @*<div class="alert alert-success">
-                    <strong>Success</strong>
-                </div>*@
+           
 
             <p class="parag">
                 Learnership Programme. Are you unemployed , looking for a learnership in information Technology and programming , want to become employable and apply the skills learnt? want to get a travel allowance while you study? , if the answer is yes then email us your cv, id copy and matric certificate to be considered. email to info@dynamicdna.co.za the subject line should be Learnership. Get this once in a lifetime opportunity. The purpose of the programme is to equip previously disadvantaged youths with nationally recognised qualifications, based on unit standards, while also providing them with workplace experience in the Systems Development landscape.Successful candidates who show dedication to the programme will be considered for a following Higher NQF level qualification, it is of utmost importance that learners give 100% dedication to this programme.
@@ -321,8 +319,9 @@
                     <a href="#" class="fa fa-youtube"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#landing" class="scroll fa fa-home"></a>
-                    <text class="text-sub" data-toggle="modal" data-target="#MyModal">Subscribe</></text>
-                    @Html.ActionLink("Log In", "Dashboard", "Administrator")
+                    <text class="text-sub" data-toggle="modal" data-target="#MyModal">Subscribe </></text>
+                    <text class="text-sub" data-toggle="modal" data-target="#MyModalAdmin">  Dashboard</></text>
+                   
                 </div>
 
             </div>
@@ -350,6 +349,78 @@
             </script>
         </footer>
     </section>
+
+
+
+
+    @*My Admin Login*@
+    <div id="MyModalAdmin" class="modal fade" role="dialog">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <h4>Administration Login</h4>
+
+
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        @using (Html.BeginForm("Login", "Administrator"))
+            {
+                            @Html.ValidationSummary()
+
+
+                            <fieldset>
+                                <div class="form-group">
+
+
+                                    
+
+                                    <div class="col-sm-3">
+                                        <label for="ex2">Username</label>
+                                        <input class="form-control" name="txtUsername" type="text" required>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+
+
+                                   
+
+                                    <div class="col-sm-3">
+                                        <label for="ex2">Password</label>
+                                        <input class="form-control" name="txtPassword" type="password" required>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="mybtns">
+
+                                    <input type="submit" name="submit" class="btn" value="Login" />
+                                    <input type="reset" name="submit" class="btn" value="Reset" />
+
+
+                                </div>
+
+                            </fieldset>
+
+                        }
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="close" type="button" data-dismiss="modal"><i class="fa fa-window-close"></i></button>
+            </div>
+        </div>
+    </div>
 
 
 </body>

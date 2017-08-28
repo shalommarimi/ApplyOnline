@@ -1,13 +1,14 @@
 ﻿using ApplyOnline.DataAccessLayer;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Drawing;
 
 namespace ApplyOnline.Models
 {
     public class MediaFiles
     {
+        [Key]
         public int PkPuictureId { get; set; }
-        public Image Picture { get; set; }
+        // public Image Picture { get; set; }
 
         public int FkApplicantId { get; set; }
         [ForeignKey("FkApplicantId")]

@@ -6,16 +6,11 @@ namespace ApplyOnline.Controllers
 {
     public class PostContentController : Controller
     {
-        // GET: PostContent
-        public ActionResult Content()
-        {
-            return View();
-        }
 
 
 
         [HttpPost]
-        public ViewResult PostNews(NewContent content)
+        public ActionResult PostNews(NewContent content)
         {
 
             if (ModelState.IsValid == true)
@@ -30,13 +25,15 @@ namespace ApplyOnline.Controllers
                 var notify = new Notifications();
                 notify.SendNewContent(content);
 
-
-                return View("Content");
+                ViewBag.Success = "Your entry has been sucessfully posted";
+                ModelState.Clear();
+                return RedirectToAction("Dashboard", "Administrator");
 
             }
             else
             {
-                return View("Content");
+                ViewBag.Error = "Could not post entry";
+                return RedirectToAction("Dashboard", "Administrator");
             }
 
 
