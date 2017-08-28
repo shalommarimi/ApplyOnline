@@ -115,11 +115,11 @@ namespace ApplyOnline.DataAccessLayer
         public virtual ApplicationType ApplicationType { get; set; }
 
 
-        [Required(ErrorMessage = "Username must contain a minimum of 6 letters")]
+        [Required]
         [MinLength(6)]
         public string Username { get; set; }
 
-        [Required(ErrorMessage = "New Passwoord field is required")]
+        [Required]
         [MaxLengthAttribute]
         [MinLength(6)]
         [DataType(DataType.Password)]

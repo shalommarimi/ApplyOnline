@@ -18,7 +18,8 @@ namespace ApplyOnline.Models
 
 
         [Display(Name = "Qualification Level")]
-        public int fKQualLevel { get; set; }
+        public int FkQualLevelId { get; set; }
+        [ForeignKey("FkQualLevelId")]
         public QualLevel QualLevels { get; set; }
 
 

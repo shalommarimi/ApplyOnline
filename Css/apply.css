@@ -1,5 +1,5 @@
 ﻿.section-apply {
-    background-image: url('../Images/finalback.jpg')!important;
+    background-image: url('../Images/finalback.jpg');
     background-attachment:fixed;
     background-repeat:no-repeat;
     background-size:cover;

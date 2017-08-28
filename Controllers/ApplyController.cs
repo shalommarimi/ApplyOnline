@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using ApplyOnline.DataContext;
+using ApplyOnline.Models;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
@@ -8,7 +9,14 @@ namespace ApplyOnline.Controllers
     {
         DataDbContext dbContext = new DataDbContext();
         // GET: Authentication
-        public ActionResult ApplicationProcess()
+        public ActionResult PersonalInformation()
+        {
+
+            return View();
+        }
+
+
+        public ActionResult Qualifications()
         {
 
 
@@ -16,8 +24,17 @@ namespace ApplyOnline.Controllers
         }
 
         [HttpPost]
+        public ActionResult Qualifications(int ApplicantId, Qualification qualification)
+        {
 
-        public ActionResult ApplicationProcess(PersonalInformation personal)
+
+
+            return View();
+        }
+
+        [HttpPost]
+
+        public ActionResult PersonalInformation(PersonalInformation personal)
         {
 
             if (ModelState.IsValid)

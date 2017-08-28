@@ -1,47 +1,175 @@
-﻿
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    Layout = null;
 }
 
+@model ApplyOnline.Models.NewContent
 
+@{
+   
+    var Posttypes = new SelectList(new string[] { "DDNA News", "DDNA Announcement", "DDNA Learnership Programme", "DDNA Internship Programme" });
+}
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrator Dashboard</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <link href="~/Css/admindash.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+   $(function() {
+       $('#attach_box').click(function() {
+           $('#sec_box').show();
+           return false;
+       });
+   });
+    </script>
+
 
 </head>
-
-<body class="dashboard">
-
-
-
-    <div class="container">
-        <h3>Administrator Dashboard</h3>
-        <div class="panel panel-admin">
-            <div class="panel-heading">Logged in as:</div>
-            <div class="panel-body">
-
-                <ul>
-                   
-                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"  onclick="location.href='@Url.Action("Content", "PostContent")'"><i class="fa fa-pencil-square-o fa-3x"></i><span>New Entry</span></button></li>
-                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-user fa-3x"></i><span> Applicants</span></button></li>
-                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-check-square-o fa-3x"></i><span> Subscribers</span></button></li>
-                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-newspaper-o fa-3x"></i><span> News</span></button></li>
-                     <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-bell-o fa-3x"></i><span> Annotate</span></button></li>
-                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-briefcase fa-3x"></i><span> Internship</span></button></li>
-                    <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-leanpub fa-3x"></i><span> Learnership</span></button></li>
-                     <li><button class="btn-block btn-ci-gray-lighter-gradient" type="button"><i class="fa fa-briefcase fa-3x"></i><span> Jobs</span></button></li>
-
-                </ul>
-
-
-
-
-            </div>
+<body>
+    <div class="header">
+        <div class="logo">
+            <span>DDNA</span><br />
+            <span>Administrator</span>
         </div>
+        <a href="#" class="nav-trigger"><span></span></a>
     </div>
+    <div class="side-nav">
+        <div class="logo">
+            <span>DDNA</span><br />
+            <span>Administrator</span>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span><i class="fa fa-user"></i></span>
+                        <span>Applicants</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa fa-envelope"></i></span>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <span><i class="fa fa-bar-chart"></i></span>
+                        <span>Statistics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="attach_box">
+                        <span><i class="fa fa-pencil-square"></i></span>
+                        <span>New Entry</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="attach_box">
+                        <span><i class="fa fa-briefcase"></i></span>
+                        <span>Vacancies</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="attach_box">
+                        <span><i class="fa fa-bullhorn"></i></span>
+                        <span>Announcements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#1" id="attach_box">
+                        <span><i class="fa fa-newspaper-o"></i></span>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="attach_box">
+                        <span><i class="fa fa-check-square"></i></span>
+                        <span>Subscribers</span>
+                    </a>
+                </li>
 
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+
+
+        <div id="sec_box" style="display: none;">
+            <div class="title">
+                <h3>New Post|Entry</h3>
+            </div>
+
+            @using (Html.BeginForm("PostNews", "PostContent"))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PostType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.PostType, Posttypes, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.PostType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PostSubject, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PostSubject, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PostSubject, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PostBody, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="mailbody">
+                                @Html.TextAreaFor(model => model.PostBody, new { @class = "form-control" })
+                            </div>
+
+                            @Html.ValidationMessageFor(model => model.PostBody, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PostEntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PostEntryDate, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly", @placeholder = System.DateTime.Now } })
+                            @Html.ValidationMessageFor(model => model.PostEntryDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Publish" class="btn" />
+                            <input type="reset" value="Reset" class="btn" />
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+        </div>
+
+        </div>
+
+   
 </body>
 </html>

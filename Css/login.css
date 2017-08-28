@@ -67,19 +67,19 @@ ul {
 }
 
 .heading3 h3 {
-    color: #fcbe1b;
+    color: #2A2B7B;
     font-family: 'Yantramanav', sans-serif;
     text-align: center;
     font-size: 200%;
     padding-top: 50px;
-    text-transform:uppercase;
+    
 }
 
 
     .heading3 h3:after {
         width: 120px;
         height: 2px;
-        background-color: #2A2B7B;
+        background-color: #fcbe1b;
         display: block;
         content: "";
         margin: 2px auto;

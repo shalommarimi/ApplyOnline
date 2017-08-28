@@ -47,7 +47,7 @@
 
 
 
-        @using (Html.BeginForm("ApplicationProcess", "Apply"))
+        @using (Html.BeginForm("PersonalInformation", "Apply"))
         {
             @Html.AntiForgeryToken()
 
@@ -276,7 +276,10 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Apply" class="btn btn-default" />
+                        @*<input type="submit" value="Apply" class="btn btn-default" />*@
+                        <input type="reset" value="Reset" class="btn btn-default" />
+                        <input type="button" value="Next" class="btn btn-default"  onclick="location.href='@Url.Action("Qualifications", "Apply")'" />
+
                     </div>
                 </div>
             </div>
