@@ -3,23 +3,17 @@ using ApplyOnline.DataContext;
 using ApplyOnline.Services;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ApplyOnline.Controllers
 {
     public class AuthenticateController : Controller
     {
         // GET: Authenticate
+        //[Authorize]
         public ActionResult Login()
         {
-
-            if (Session["FirstName"] != null && Session["LastName"] != null)
-            {
-                return RedirectToAction("Dashboard", "Applicant");
-            }
-            else
-            {
-                return View();
-            }
+            return View();
 
         }
 
@@ -42,7 +36,9 @@ namespace ApplyOnline.Controllers
                     {
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.FirstName.ToString();
+                        FormsAuthentication.SetAuthCookie(user.Username, false);
                         return RedirectToAction("Dashboard", "Applicant");
+
 
                     }
 

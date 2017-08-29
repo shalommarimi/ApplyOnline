@@ -56,7 +56,7 @@ namespace ApplyOnline.Controllers
                     catch (System.Exception)
                     {
 
-                        ViewBag.Message = "Error!";
+                        ViewBag.MessageSub = "Database Error!";
                         ModelState.Clear();
                         return View("Index");
                     }

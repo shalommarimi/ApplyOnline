@@ -9,7 +9,7 @@
             //{
             //    var stringBuilder = new StringBuilder();
             //    mail.To.Add(s.EmailAddress);
-            //    mail.From = new MailAddress("learnerslogsystem@gmail.com");
+            //    mail.From = new MailAddress("donotreplyapplyonline@gmail.com");
             //    mail.Subject = content.PostSubject;
             //    stringBuilder.Append("Hi " + s.FirstName + " " + s.LastName + "<br></br>");
             //    stringBuilder.Append("<br></br>" + content.PostBody + "<br></br>");
@@ -21,7 +21,7 @@
             //    smtp.Port = 587;
             //    smtp.UseDefaultCredentials = false;
             //    smtp.Credentials = new System.Net.NetworkCredential
-            //    ("learnerslogsystem@gmail.com", "Jedia.01");
+            //    ("donotreplyapplyonline@gmail.com", "Jedia.01");
             //    smtp.EnableSsl = true;
             //    smtp.Send(mail);
             //}

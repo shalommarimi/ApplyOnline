@@ -51,12 +51,12 @@ namespace ApplyOnline.Controllers
                 }
                 catch (System.Exception)
                 {
-                    ViewBag.Error = "Username or Password is incorrect";
+                    ViewBag.ErrorAdmin = "Username or Password is incorrect";
                     return RedirectToAction("Index", "Home");
 
                 }
             }
-            ViewBag.Error = "Username or Password is incorrect";
+            ViewBag.ErrorAdmin = "Username or Password is incorrect";
             return RedirectToAction("Index", "Home");
 
         }
@@ -65,7 +65,7 @@ namespace ApplyOnline.Controllers
         {
 
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "Applicant"); ;
+            return RedirectToAction("Index", "Home"); ;
         }
     }
 }

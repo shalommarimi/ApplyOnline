@@ -128,14 +128,12 @@ body {
 }
 /* main content styles */
 .main-content {
-	/*padding: 40px;*/
+	padding: 40px;
 	margin-top: 0;
 	padding: 0;
 	padding-top: 44px;
 	height: 100%;
-	margin:0;
-	overflow:hidden;
-
+	/*overflow: scroll;*/
 }
 .main-content .title {
 	background-color:#FCBE1B;

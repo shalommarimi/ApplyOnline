@@ -10,7 +10,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login Portal</title>
-
+    <link href="~/Fonts/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 
 <body class="text-center">
@@ -23,55 +23,58 @@
             <img src="~/Images/login_icon.png" />
             @using (Html.BeginForm("Login", "Authenticate"))
             {
-                @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken()
 
-                <div class="form-horizontal">
+            <div class="form-horizontal">
 
 
-                    <hr />
+                <hr />
 
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @if (ViewBag.Message != null)
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @if (ViewBag.Message != null)
                 {
-                        <div class="col-md-2" id="error">@ViewBag.Message</div>
+                <div class="col-md-2" id="error">@ViewBag.Message</div>
                     }
-                    <div class="form-group">
+                <div class="form-group">
 
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your Username" } })
-                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-
-                        <div class="col-md-10">
-                            @Html.EditorFor(model => model.New_Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your Password" } })
-
-                            @Html.ValidationMessageFor(model => model.New_Password, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-
-
-                    <div class="form-group">
-                        <div class="text-center">
-                            <input type="submit" value="Login" class="btn btn-default" id="btn" />
-
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="text-center" id="forgotpassword">
-                            <a href="#MyModal" data-toggle="modal" data-target="#MyModal"><p>Forgot Password <i class="fa fa-question-circle" aria-hidden="true"></i></a>
-
-                        </div>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your Username" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.New_Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your Password" } })
+
+                        @Html.ValidationMessageFor(model => model.New_Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="text-center">
+                        <input type="submit" value="Login" class="btn btn-default" id="btn" />
+
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="text-center" id="forgotpassword">
+                        <a href="#MyModal" data-toggle="modal" data-target="#MyModal"><p>Forgot Password <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+
+                    </div>
+                </div>
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></a>
+            </div>
             }
 
 
         </div>
     </section>
+
 
     <div id="MyModal" class="modal fade" role="dialog">
 
@@ -122,6 +125,8 @@
 
                                 <input type="submit" name="submit" class="btn" value="Send Reset Link" />
                                 <input type="reset" name="submit" class="btn" value="Reset" />
+                                @*<input type="button" name="submit" class="btn btn-warning" value="Logout" onclick="location.href='@Url.Action("Logout", "Applicant")'" />*@
+
 
                             </div>
 
@@ -137,5 +142,8 @@
             </div>
         </div>
     </div>
+
+   
+
 </body>
 </html>

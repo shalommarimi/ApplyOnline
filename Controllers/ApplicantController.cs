@@ -5,6 +5,7 @@ namespace ApplyOnline.Controllers
     public class ApplicantController : Controller
     {
         // GET: Applicant
+        [Authorize]
         public ActionResult Dashboard()
         {
             if (Session["FirstName"] != null && Session["LastName"] != null)

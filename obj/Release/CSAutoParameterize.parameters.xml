@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DataDbContext-Web.config Connection String" description="DataDbContext Connection String used in web.config by the application to access the database." defaultValue="server=.; Database=Applicants; integrated security = true" tags="SqlConnectionString">
+  <parameter name="DataDbContext-Web.config Connection String" description="DataDbContext Connection String used in web.config by the application to access the database." defaultValue="workstation id=ApplyOnlineDB.mssql.somee.com;packet size=4096;user id=BlackrimsObs_SQLLogin_1;pwd=1ei239n4bc;data source=ApplyOnlineDB.mssql.somee.com;persist security info=False;initial catalog=ApplyOnlineDB" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Smarimi\\Documents\\Visual\ Studio\ 2015\\Projects\\ApplyOnline\\ApplyOnline\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataDbContext']/@connectionString" />
   </parameter>
 </parameters>

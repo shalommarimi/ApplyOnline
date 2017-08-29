@@ -152,8 +152,10 @@
     <Content Include="Css\admindash.css" />
     <Content Include="Css\animate.css" />
     <Content Include="Css\apply.css" />
+    <Content Include="Css\bootstrap.min.css" />
     <Content Include="Css\carousel.css" />
     <Content Include="Css\index.css" />
+    <Content Include="Css\ionicons.min.css" />
     <Content Include="Css\login.css" />
     <Content Include="Css\media.css" />
     <Content Include="Css\partners.css" />
@@ -223,6 +225,8 @@
     <Content Include="Images\yellowcard.png" />
     <Content Include="Images\yellowcard2.png" />
     <Content Include="Images\_fs_DVT_Learner_2.jpg" />
+    <Content Include="MyScripts\highcharts.js" />
+    <Content Include="MyScripts\jquery-3.0.0.min.js" />
     <Content Include="MyScripts\jquery.cycle2.min.js" />
     <Content Include="MyScripts\jquery.waterwheelCarousel.js" />
     <Content Include="MyScripts\jquery.waterwheelCarousel.min.js" />

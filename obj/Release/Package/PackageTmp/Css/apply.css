@@ -1,5 +1,5 @@
 ﻿.section-apply {
-    background-image: url('../Images/finalback.jpg')!important;
+    background-image: url('../Images/finalback.jpg');
     background-attachment:fixed;
     background-repeat:no-repeat;
     background-size:cover;
@@ -9,3 +9,9 @@
         border: solid #ffffff 2px;
         background-color: #FCBE1B;
     }
+.clearfix{
+    clear: both;
+    padding: 0;
+    margin: 0;
+    height: 5px;
+    display: block;}

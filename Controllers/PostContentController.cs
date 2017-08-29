@@ -25,14 +25,14 @@ namespace ApplyOnline.Controllers
                 var notify = new Notifications();
                 notify.SendNewContent(content);
 
-                ViewBag.Success = "Your entry has been sucessfully posted";
+                ViewBag.SuccessPost = "Your entry has been sucessfully posted";
                 ModelState.Clear();
                 return RedirectToAction("Dashboard", "Administrator");
 
             }
             else
             {
-                ViewBag.Error = "Could not post entry";
+                ViewBag.ErrorPost = "Could not post entry";
                 return RedirectToAction("Dashboard", "Administrator");
             }
 

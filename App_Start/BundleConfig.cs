@@ -7,12 +7,11 @@ namespace ApplyOnline.App_Start
 
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //bundles.Add(new ScriptBundle("~/ng").Include(
-            //    "~/Scripts/angolar.min.js",
-            //    "~/Scripts/angolar-route.min.js",
-            //    "~/Scripts/angolar-cookies.min.js",
-            //    "~/Scripts/angolar-sanitize.min.js"
-            //    ));
+            bundles.Add(new ScriptBundle("~/MyScriptsC").Include(
+                 "~/MyScripts/main.js",
+                 "~/MyScripts/jquery-3.0.0.min.js",
+                 "~/MyScripts/highcharts.js"
+                ));
 
             bundles.Add(new ScriptBundle("~/MyScriptsB").Include(
                  "~/MyScripts/jquery.waypoints.min.js",
@@ -52,6 +51,18 @@ namespace ApplyOnline.App_Start
                  "~/Css/apply.css"
 
                 ));
+
+            bundles.Add(new StyleBundle("~/CssC").Include(
+              "~/Css/admindash.css",
+              "~/Css/ionicons.min.css",
+              "~/Css/bootstrap.min.css"
+
+
+
+
+
+
+              ));
             BundleTable.EnableOptimizations = true;
 
         }
