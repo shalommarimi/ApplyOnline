@@ -70,7 +70,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#makenewentry" data-toggle="collapse">
+                    <a href="#makenewentry" data-toggle="collapse" class="active">
                         <span><i class="fa fa-pencil-square"></i></span>
                         <span>New Entry</span>
                     </a>
@@ -109,7 +109,7 @@
     <div class="main-content">
 
 
-        <div class="panel-collapse collapse" id="makenewentry">
+        <div class="panel-collapse" id="makenewentry">
             <div class="title">
                 <h3>Make a new entry</h3>
             </div>
@@ -182,7 +182,7 @@
                 <br />
                 <br />
                 <div class="form-horizontal">
-                    @using (Html.BeginForm("PostContent", "Send"))
+                    @using (Html.BeginForm("Send","PostContent"))
                 {
                         @Html.AntiForgeryToken()
 
@@ -190,55 +190,48 @@
 
                         <div class="form-horizontal">
                             <div class="form-group row">
-                                <label for="text-input" class="col-md-2 control-label">Recipient</label>
+                                <label for="text-input" class="control-label col-md-2">Recipient</label>
                                 <div class="col-xs-4">
                                     <input class="form-control" type="text" name="txtEmail">
                                 </div>
                             </div>
+                           
                             <div class="form-group">
-                                <label for="input" class="col-md-2 control-label">Cc</label>
-                                <div class="col-xs-4">
-                                    <input class="form-control" type="email" name="txtCc">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="input" class="col-md-2 control-label">Bcc</label>
-                                <div class="col-xs-4">
-                                    <input class="form-control" type="email" name="txtBcc">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject-input" class="col-md-2 control-label">Subject</label>
+                                <label for="subject-input" class="control-label col-md-2">Subject</label>
                                 <div class="col-xs-4">
                                     <input class="form-control" type="text" name="txtSubject">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="message-input" class="col-md-2 control-label">Message</label>
+                                <label for="message-input" class="control-label col-md-2">Message</label>
                                 <div class="col-xs-4">
-                                    <input class="form-control" type="text" name="txtMessage">
+                                    <textarea class="form-control" type="text" name="txtMessage"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="attachment-input" class="col-md-2 control-label">Attachement</label>
+                                <label for="attachment-input" class="control-label col-md-2">Attachement</label>
                                 <div class="col-xs-4">
                                     <input class="form-control" type="text" name="attachment">
                                 </div>
                             </div>
 
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Send" class="btn" />
+                                <input type="reset" value="Reset" class="btn" />
+                                <input type="button" name="submit" class="btn" value="Sign Out" onclick="location.href='@Url.Action("Logout", "Administrator")'" />
+                                <div class="tooltip">
+                                    <p style="color:red">Hover over me</p>
+                                    <span class="tooltiptext">Please "CLICK" on tab to Open or Close</span>
+                                </div>
 
+                            </div>
+                        </div>
 
                     }
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Send" class="btn" />
-                            <input type="reset" value="Reset" class="btn" />
-                            <input type="button" name="submit" class="btn" value="Sign Out" onclick="location.href='@Url.Action("Logout", "Administrator")'" />
-
-                        </div>
-                    </div>
+                   
                 </div>
 
 

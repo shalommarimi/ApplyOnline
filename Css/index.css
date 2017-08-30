@@ -1,388 +1,402 @@
-﻿/*@import url('https://fonts.googleapis.com/css?family=Yantramanav:100');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400');*/
+﻿
 .mailbody .form-control {
-    width: 100%;
-    height: 300px;
+	width: auto;
+	height: 300px;
 }
-
+/*a:active {
+	
+}
+a:focus {
+	
+   }*/
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url(../Images/finalback.jpg);
-    background-attachment: fixed !important;
-    background-size: cover;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	background-image: url(../Images/finalback.jpg);
+	background-attachment: fixed !important;
+	background-size: cover;
 }
 
 .intro {
-    height: 100%;
-    width: 100%;
-    margin: auto;
-    background-image: url('../Images/Background.jpg');
-    background-repeat: no-repeat;
-    display: table;
-    top: 0;
-    background-size: cover;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	background-image: url('../Images/Background.jpg');
+	background-repeat: no-repeat;
+	display: table;
+	top: 0;
+	background-size: cover;
 }
-
-    .intro .inner {
-        display: table-cell;
-        vertical-align: middle;
-        width: 100%;
-        max-width: none;
-    }
+#MyModalAdmin .form-control {
+	width: auto;
+}
+	.intro .inner {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		max-width: none;
+	}
 
 .content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    padding-bottom: 10%;
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 10%;
 }
 
-    .content h1 {
-        font-family: 'Yantramanav', sans-serif;
-        font-size: 400%;
-        font-weight: 100;
-        color: #E1EFE9;
-        line-height: 70%;
-    }
+	.content h1 {
+		font-family: 'Yantramanav', sans-serif;
+		font-size: 400%;
+		font-weight: 100;
+		color: #E1EFE9;
+		line-height: 70%;
+	}
 
 img {
-    padding-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 .btn {
-    font-family: 'Arial', sans-serif;
-    font-size: 120%;
-    font-weight: 200;
-    color: #ffffff;
-    text-decoration: none;
-    border: solid #FCBE1B 2px;
-    background-color: #2A2B7B;
-    border-radius: 9px;
-    padding: 9px 18px;
-    transition: all 0.7s;
-    margin: 5px;
+	font-family: 'Arial', sans-serif;
+	font-size: 120%;
+	font-weight: 200;
+	color: #ffffff;
+	text-decoration: none;
+	border: solid #FCBE1B 2px;
+	background-color: #2A2B7B;
+	border-radius: 9px;
+	padding: 9px 18px;
+	transition: all 0.7s;
+	margin: 5px;
 }
 
-    .btn:hover {
-        color: #2A2B7B;
-        border: solid #2A2B7B 2px;
-        background-color: #FCBE1B;
-    }
+	.btn:hover {
+		color: #2A2B7B;
+		border: solid #2A2B7B 2px;
+		background-color: #FCBE1B;
+	}
 
 .announcements h2 {
-    color: #2A2B7B;
-    font-family: 'Yantramanav', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 200%;
-    margin-top: 60px;
-    margin-bottom: 30px;
+	color: #2A2B7B;
+	font-family: 'Yantramanav', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 200%;
+	margin-top: 60px;
+	margin-bottom: 30px;
 }
 
 h2:after {
-    width: 100px;
-    height: 2px;
-    background-color: #2A2B7B;
-    display: block;
-    content: "";
-    margin: 0 auto;
-    margin-top: 10px;
+	width: 100px;
+	height: 2px;
+	background-color: #2A2B7B;
+	display: block;
+	content: "";
+	margin: 0 auto;
+	margin-top: 10px;
 }
 
 .announcements {
-    background-color: #FCBE1B;
-    font-family: 'Yantramanav', sans-serif;
-    color: #2A2B7B;
+	background-color: #FCBE1B;
+	font-family: 'Yantramanav', sans-serif;
+	color: #2A2B7B;
 }
 
 .news h2 {
-    color: #2A2B7B;
-    font-family: 'Yantramanav', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 200%;
+	color: #2A2B7B;
+	font-family: 'Yantramanav', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 200%;
 }
 
 .news {
-    background-color: #FCBE1B;
-    font-family: 'Yantramanav', sans-serif;
-    color: #2A2B7B;
+	background-color: #FCBE1B;
+	font-family: 'Yantramanav', sans-serif;
+	color: #2A2B7B;
 }
 
 .partners h2 {
-    color: #2A2B7B;
-    font-family: 'Yantramanav', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 200%;
+	color: #2A2B7B;
+	font-family: 'Yantramanav', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 200%;
 }
 
 .partners {
-    font-family: 'Yantramanav', sans-serif;
-    color: #ffffff;
+	font-family: 'Yantramanav', sans-serif;
+	color: #ffffff;
 }
 
 .insights {
-    background-color: transparent;
-    font-family: 'Yantramanav', sans-serif;
-    color: #FCBE1B;
+	background-color: transparent;
+	font-family: 'Yantramanav', sans-serif;
+	color: #FCBE1B;
 }
 
 .section-insights h2:after {
-    width: 100px;
-    height: 2px;
-    background-color: #FCBE1B;
-    display: block;
-    content: "";
-    margin: 0 auto;
-    margin-top: 10px;
+	width: 100px;
+	height: 2px;
+	background-color: #FCBE1B;
+	display: block;
+	content: "";
+	margin: 0 auto;
+	margin-top: 10px;
 }
 
 .section-insights h3:after {
-    width: 100px;
-    height: 2px;
-    background-color: #FCBE1B;
-    display: block;
-    content: "";
-    margin: 0 auto;
-    margin-top: 10px;
+	width: 100px;
+	height: 2px;
+	background-color: #FCBE1B;
+	display: block;
+	content: "";
+	margin: 0 auto;
+	margin-top: 10px;
 }
 
 .insights h2 {
-    color: #FCBE1B;
-    font-family: 'Yantramanav', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 200%;
+	color: #FCBE1B;
+	font-family: 'Yantramanav', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 200%;
 }
 
 .social h2 {
-    color: #ffffff;
-    font-family: 'Yantramanav', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-size: 200%;
+	color: #ffffff;
+	font-family: 'Yantramanav', sans-serif;
+	text-align: center;
+	font-weight: bold;
+	font-size: 200%;
 }
 
-    .social h2:after {
-        width: 100px;
-        height: 2px;
-        background-color: #FCBE1B;
-        display: block;
-        content: "";
-        margin: 0 auto;
-        margin-top: 10px;
-    }
+	.social h2:after {
+		width: 100px;
+		height: 2px;
+		background-color: #FCBE1B;
+		display: block;
+		content: "";
+		margin: 0 auto;
+		margin-top: 10px;
+	}
 
 .insights img {
-    border-radius: 50%;
-    width: 230px;
-    height: 230px;
-    border: solid 3px #FCBE1B;
+	border-radius: 50%;
+	width: 230px;
+	height: 230px;
+	border: solid 3px #FCBE1B;
 }
 
-    .insights img:hover {
-        border: solid 3px #2A2B7B;
-    }
+	.insights img:hover {
+		border: solid 3px #2A2B7B;
+	}
 
 .arrange {
-    text-align: justify;
+	text-align: justify;
 }
 
 .section-footer {
-    background-color: #2A2B7B;
-    text-align: center;
+	background-color: #2A2B7B;
+	text-align: center;
 }
 
-    .section-footer p {
-        color: #ffffff;
-        text-align: center;
-        font-size: 14px;
-    }
+	.section-footer p {
+		color: #ffffff;
+		text-align: center;
+		font-size: 14px;
+	}
 
 .social {
-    background-color: #2A2B7B !Important;
-    font-family: 'Yantramanav', sans-serif;
-    color: #2A2B7B;
+	background-color: #2A2B7B !Important;
+	font-family: 'Yantramanav', sans-serif;
+	color: #2A2B7B;
 }
 
 
 
 .announce-news {
-    background-color: #FCBE1B;
+	background-color: #FCBE1B;
 }
 
 .section-insights h3 {
-    font-weight: bold;
-    font-size: 150%;
+	font-weight: bold;
+	font-size: 150%;
 }
 
 .but_small5.light2 {
-    padding: 8px;
-    color: #2A2B7B;
-    border: 1px solid #E1E1E1;
-    background: #fdbb30;
+	padding: 8px;
+	color: #2A2B7B;
+	border: 1px solid #E1E1E1;
+	background: #fdbb30;
 }
 
 .news h3 {
-    font-weight: bold;
-    text-align: center;
-    color: #2A2B7B;
+	font-weight: bold;
+	text-align: center;
+	color: #2A2B7B;
 }
 
 .section-partnership {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 .section-insights {
-    text-align: center;
+	text-align: center;
 }
 
 
 
 p {
-    font-size: 120%;
-    line-height: 120%;
-    font-family: Arial;
+	font-size: 120%;
+	line-height: 120%;
+	font-family: Arial;
 }
 
 .container p {
-    width: 70%;
-    margin-left: 15%;
-    font-size: 120%;
-    line-height: 140%;
-    font-family: Arial;
+	width: 70%;
+	margin-left: 15%;
+	font-size: 120%;
+	line-height: 140%;
+	font-family: Arial;
 }
 
 .parag {
-    width: 70%;
-    margin-left: 15%;
-    font-size: 120%;
-    line-height: 120%;
-    font-family: Arial;
-    text-align: justify;
+	width: 70%;
+	margin-left: 15%;
+	font-size: 120%;
+	line-height: 120%;
+	font-family: Arial;
+	text-align: justify;
 }
 
 @media screen and (max-width: 900px) {
-    .content {
-        padding-bottom: 30%;
-    }
+	.content {
+		padding-bottom: 30%;
+	}
 
-        .content h1 {
-            font-size: 450%;
-        }
+		.content h1 {
+			font-size: 450%;
+		}
 
-    .btn {
-        font-size: 110%;
-        padding: 9px 17px;
-    }
+	.btn {
+		font-size: 110%;
+		padding: 9px 17px;
+	}
 }
 
 @media screen and (max-width: 768px) {
-    .content {
-        padding-bottom: 40%;
-    }
+	.content {
+		padding-bottom: 40%;
+	}
 
-        .content h1 {
-            font-size: 300%;
-        }
+		.content h1 {
+			font-size: 300%;
+		}
 
-    .btn {
-        font-size: 110%;
-        padding: 7px 15px;
-    }
+	.btn {
+		font-size: 110%;
+		padding: 7px 15px;
+	}
 
-    p {
-        font-size: 20%;
-        line-height: 100%;
-    }
+	p {
+		font-size: 20%;
+		line-height: 100%;
+	}
 }
 
 @media screen and (max-width: 480px) {
-    .content {
-        padding-bottom: 50%;
-    }
+	.content {
+		padding-bottom: 50%;
+	}
 
-        .content h1 {
-            font-size: 250%;
-        }
+		.content h1 {
+			font-size: 250%;
+		}
 
-    .btn {
-        font-size: 110%;
-        padding: 9px 17px;
-    }
+	.btn {
+		font-size: 110%;
+		padding: 9px 17px;
+	}
 
-    p {
-        font-size: 20%;
-        line-height: 100%;
-    }
+	p {
+		font-size: 20%;
+		line-height: 100%;
+	}
 }
 
 .social .icons text {
-    font-weight: bold;
-    color: #fff;
-    font-size: 16px !important;
+	font-weight: bold;
+	color: #fff;
+	font-size: 16px !important;
 }
 
-    .social .icons text:hover {
-        color: #FCBE1B;
-        cursor: pointer;
-    }
+	.social .icons text:hover {
+		color: #FCBE1B;
+		cursor: pointer;
+	}
 
 #MyModal h4 {
-    color: #2A2B7B;
-    text-align: center;
+	color: #2A2B7B;
+	text-align: center;
 }
 
-    #MyModal h4:after {
-        width: 100px;
-        height: 2px;
-        background-color: #FCBE1B;
-        display: block;
-        content: "";
-        margin: 0 auto;
-        margin-top: 10px;
-    }
+	#MyModal h4:after {
+		width: 100px;
+		height: 2px;
+		background-color: #FCBE1B;
+		display: block;
+		content: "";
+		margin: 0 auto;
+		margin-top: 10px;
+	}
 
 #MyModalAdmin h4 {
-    color: #2A2B7B;
-    text-align: center;
+	color: #2A2B7B;
+	text-align: center;
 }
 
-    #MyModalAdmin h4:after {
-        width: 100px;
-        height: 2px;
-        background-color: #FCBE1B;
-        display: block;
-        content: "";
-        margin: 0 auto;
-        margin-top: 10px;
-    }
+	#MyModalAdmin h4:after {
+		width: 100px;
+		height: 2px;
+		background-color: #FCBE1B;
+		display: block;
+		content: "";
+		margin: 0 auto;
+		margin-top: 10px;
+	}
 
 .modal-body .mybtns {
-    font-family: 'Arial',sans-serif;
-    font-size: 75%;
-    font-weight: 200;
-    color: #fff;
-    text-decoration: none;
-    padding: 3px 6px;
-    transition: all .7s;
+	font-family: 'Arial',sans-serif;
+	font-size: 75%;
+	font-weight: 200;
+	color: #fff;
+	text-decoration: none;
+	padding: 3px 6px;
+	transition: all .7s;
 }
-
+#MyModalAdmin .modal-body .mybtns {
+	font-family: 'Arial',sans-serif;
+	font-size: 75%;
+	font-weight: 200;
+	color: #fff;
+	text-decoration: none;
+	padding: 0px 0px;
+	transition: all .7s;
+}
 #cvsection {
-    color: #2A2B7B;
-    text-align: center;
+	color: #2A2B7B;
+	text-align: center;
 }
 
-    #cvsection h3:after {
-        width: 100px;
-        height: 2px;
-        background-color: #FCBE1B;
-        display: block;
-        content: "";
-        margin: 0 auto;
-        margin-top: 10px;
-    }
+	#cvsection h3:after {
+		width: 100px;
+		height: 2px;
+		background-color: #FCBE1B;
+		display: block;
+		content: "";
+		margin: 0 auto;
+		margin-top: 10px;
+	}

@@ -23,11 +23,11 @@ namespace ApplyOnline.Controllers
             return View();
         }
 
+
+
         [HttpPost]
         public ActionResult Qualifications(int ApplicantId, Qualification qualification)
         {
-
-
 
             return View();
         }
@@ -64,12 +64,11 @@ namespace ApplyOnline.Controllers
                 }
 
 
-
             }
             else
             {
                 ViewBag.MessageDidNotApply = " It seems like we could not send your Application";
-                return View("ApplicationProcess");
+                return View();
             }
 
         }

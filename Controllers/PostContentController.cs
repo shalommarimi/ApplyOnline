@@ -8,6 +8,26 @@ namespace ApplyOnline.Controllers
     {
 
 
+        [HttpPost]
+        public ActionResult Send(FormCollection email)
+        {
+
+            try
+            {
+                var emailService = new EmailService();
+                emailService.SendEmail(email["txtEmail"], email["txtSubject"], email["txtMessage"]);
+                return RedirectToAction("Dashboard", "Administrator");
+            }
+            catch (System.Exception)
+            {
+
+                return RedirectToAction("Dashboard", "Administrator");
+            }
+
+
+        }
+
+
 
         [HttpPost]
         public ActionResult PostNews(NewContent content)
