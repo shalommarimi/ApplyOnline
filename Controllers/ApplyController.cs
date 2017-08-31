@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using ApplyOnline.DataContext;
+using ApplyOnline.Services;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -32,6 +33,12 @@ namespace ApplyOnline.Controllers
                     {
                         if (!dbContext.PersonalInformations.Any(t => t.IdNumber.Equals(personal.IdNumber)))
                         {
+                            var HashPassword = new Hashing();
+
+                            //Hashing Password before it is saved
+                            personal.New_Password = HashPassword.HashPassword(personal.New_Password);
+                            personal.ConfirmPassword = HashPassword.HashPassword(personal.ConfirmPassword);
+
                             dbContext.PersonalInformations.Add(personal);
                             dbContext.SaveChanges();
 

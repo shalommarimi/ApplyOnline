@@ -27,11 +27,12 @@ namespace ApplyOnline.Controllers
             {
                 try
                 {
-                    var hashInputPassword = new Hashing();
-                    string inPuttedPassword = hashInputPassword.HashPassword(userInput.New_Password);
+                    //Comparing entered Password before it is compared
+                    var HashPassword = new Hashing();
+                    userInput.New_Password = HashPassword.HashPassword(userInput.New_Password);
 
 
-                    var user = context.PersonalInformations.Single(u => u.New_Password == inPuttedPassword && u.Username == userInput.Username);
+                    var user = context.PersonalInformations.Single(u => u.New_Password == userInput.New_Password && u.Username == userInput.Username);
                     if (user != null)
                     {
                         Session["FirstName"] = user.FirstName.ToString();
