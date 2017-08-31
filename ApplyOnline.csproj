@@ -300,12 +300,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\ApplicantController.cs" />
+    <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\AuthenticateController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ApplyController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostContentController.cs" />
+    <Compile Include="Controllers\ReferenceController.cs" />
+    <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SyllabusController.cs" />
+    <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="DataContext\DataDbContext.cs" />
     <Compile Include="DataContext\SeedDataContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -326,6 +331,7 @@
     <Compile Include="Models\QualLevel.cs" />
     <Compile Include="Models\Reference.cs" />
     <Compile Include="Models\ResetPasswordRequest.cs" />
+    <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Subscribe.cs" />
     <Compile Include="Models\WorkExprience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -334,6 +340,7 @@
     <Compile Include="Services\Notifications.cs" />
     <Compile Include="Services\PostLatest.cs" />
     <Compile Include="Services\RegisterSubscriber.cs" />
+    <Compile Include="Services\GetUsertId.cs" />
     <Compile Include="Services\SaveApplicant.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -354,7 +361,11 @@
     <Content Include="Views\Apply\PersonalInformation.cshtml" />
     <Content Include="Views\Authenticate\Login.cshtml" />
     <Content Include="Views\Applicant\Dashboard.cshtml" />
-    <Content Include="Views\Apply\Qualifications.cshtml" />
+    <Content Include="Views\Education\Qualification.cshtml" />
+    <Content Include="Views\Work\WorkExperience.cshtml" />
+    <Content Include="Views\Application\Completed.cshtml" />
+    <Content Include="Views\Reference\References.cshtml" />
+    <Content Include="Views\Skill\Skills.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,13 +1,13 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using ApplyOnline.DataContext;
-using ApplyOnline.Models;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
 {
     public class ApplyController : Controller
     {
-        DataDbContext dbContext = new DataDbContext();
+
         // GET: Authentication
         public ActionResult PersonalInformation()
         {
@@ -16,21 +16,7 @@ namespace ApplyOnline.Controllers
         }
 
 
-        public ActionResult Qualifications()
-        {
 
-
-            return View();
-        }
-
-
-
-        [HttpPost]
-        public ActionResult Qualifications(int ApplicantId, Qualification qualification)
-        {
-
-            return View();
-        }
 
         [HttpPost]
 
@@ -40,17 +26,31 @@ namespace ApplyOnline.Controllers
             if (ModelState.IsValid)
             {
 
-                using (var context = new DataDbContext())
+                using (var dbContext = new DataDbContext())
                 {
                     try
                     {
+                        if (!dbContext.PersonalInformations.Any(t => t.IdNumber.Equals(personal.IdNumber)))
+                        {
+                            dbContext.PersonalInformations.Add(personal);
+                            dbContext.SaveChanges();
 
-                        context.PersonalInformations.Add(personal);
-                        context.SaveChanges();
 
-                        ModelState.Clear();
-                        ViewBag.MessageApplied = " Thank you for Applying " + personal.FirstName + " " + personal.LastName;
-                        return View();
+
+
+                            ModelState.Clear();
+                            int id = personal.PkApplicantId;
+                            return RedirectToAction("Qualification", "Education", new { id = id });
+
+                        }
+                        else
+                        {
+                            ModelState.Clear();
+                            ViewBag.Exist = " Applicant with Identity Number " + personal.IdNumber + " already exits. Please go to \"LOGIN\"";
+                            return View();
+                        }
+
+
 
                     }
                     catch (System.Exception)

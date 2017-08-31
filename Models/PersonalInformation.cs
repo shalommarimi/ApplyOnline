@@ -38,6 +38,7 @@ namespace ApplyOnline.DataAccessLayer
         public DateTime DOB { get; set; }
 
         [Required]
+        //[RegularExpression("")]
         [Display(Name = "Identity Number")]
         public string IdNumber { get; set; }
 
@@ -139,6 +140,7 @@ namespace ApplyOnline.DataAccessLayer
         public List<Qualification> Qualifications { get; set; }
         public List<MediaFiles> MediaFile { get; set; }
         public List<Reference> References { get; set; }
+        public List<Skill> Skills { get; set; }
         public List<ResetPasswordRequest> ResetPasswordRequests { get; set; }
 
 
