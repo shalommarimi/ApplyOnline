@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataContext;
 using ApplyOnline.Models;
+using System;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
@@ -13,19 +14,26 @@ namespace ApplyOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult Skills(int id, Skill skill)
+        public ActionResult Skills(Skill skill)
         {
 
             try
             {
                 using (var dbContext = new DataDbContext())
                 {
+                    if (Session["ApplicantID"] != null)
+                    {
+                        skill.FkApplicantId = Convert.ToInt32(Session["ApplicantID"]);
+                        dbContext.Skills.Add(skill);
+                        dbContext.SaveChanges();
+                        ModelState.Clear();
+                        return RedirectToAction("References", "Reference");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Expired", "Session");
+                    }
 
-                    skill.FkApplicantId = id;
-                    dbContext.Skills.Add(skill);
-                    dbContext.SaveChanges();
-                    ModelState.Clear();
-                    return RedirectToAction("References", "Reference", new { id = id });
 
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using ApplyOnline.DataContext;
+using ApplyOnline.Services;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -32,15 +33,18 @@ namespace ApplyOnline.Controllers
             {
                 try
                 {
-                    //var hashInputPassword = new Hashing();
-                    //string inPuttedPassword = hashInputPassword.HashPassword(userInput.New_Password);
+                    //Comparing entered Password before it is compared
+                    var HashPassword = new Hashing();
+
+
                     string Username = admin["txtUsername"];
-                    string Password = admin["txtPassword"];
+                    string Password = admin["txtPassword"] = HashPassword.HashPassword(admin["txtPassword"]);
 
                     var user = context.Admin.Single(u => u.Password == Password && u.Username == Username);
 
                     if (user != null)
                     {
+
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.LastName.ToString();
                         FormsAuthentication.SetAuthCookie(user.Username, false);

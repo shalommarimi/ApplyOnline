@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataContext;
 using ApplyOnline.Models;
+using System;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
@@ -13,7 +14,7 @@ namespace ApplyOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult Qualification(int id, Qualification qualification)
+        public ActionResult Qualification(Qualification qualification)
         {
 
             if (ModelState.IsValid)
@@ -23,12 +24,20 @@ namespace ApplyOnline.Controllers
                 {
                     try
                     {
-                        qualification.FkApplicantId = id;
-                        context.Qualifications.Add(qualification);
-                        context.SaveChanges();
+                        if (Session["ApplicantID"] != null)
+                        {
+                            qualification.FkApplicantId = Convert.ToInt32(Session["ApplicantId"]);
+                            context.Qualifications.Add(qualification);
+                            context.SaveChanges();
+                            ModelState.Clear();
+                            return RedirectToAction("WorkExperience", "Work");
+                        }
+                        else
+                        {
+                            return RedirectToAction("Expired", "Session");
+                        }
 
-                        ModelState.Clear();
-                        return RedirectToAction("WorkExperience", "Work", new { id = id });
+
 
                     }
                     catch (System.Exception)

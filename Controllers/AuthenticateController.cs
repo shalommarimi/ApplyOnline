@@ -1,6 +1,7 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using ApplyOnline.DataContext;
 using ApplyOnline.Services;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -35,8 +36,10 @@ namespace ApplyOnline.Controllers
                     var user = context.PersonalInformations.Single(u => u.New_Password == userInput.New_Password && u.Username == userInput.Username);
                     if (user != null)
                     {
+                        Session["PkApplicantId"] = Convert.ToInt32(user.PkApplicantId);
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.FirstName.ToString();
+
                         FormsAuthentication.SetAuthCookie(user.Username, false);
                         return RedirectToAction("Dashboard", "Applicant");
 

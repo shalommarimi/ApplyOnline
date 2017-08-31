@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataContext;
 using ApplyOnline.Models;
+using System;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
@@ -13,18 +14,26 @@ namespace ApplyOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult WorkExperience(int id, WorkExprience work)
+        public ActionResult WorkExperience(WorkExprience work)
         {
             try
             {
                 using (var dbContext = new DataDbContext())
                 {
-                    work.FkApplicantId = id;
-                    dbContext.WorkExpriences.Add(work);
-                    dbContext.SaveChanges();
+                    if (Session["ApplicantID"] != null)
+                    {
+                        work.FkApplicantId = Convert.ToInt32(Session["ApplicantID"]);
+                        dbContext.WorkExpriences.Add(work);
+                        dbContext.SaveChanges();
 
-                    ModelState.Clear();
-                    return RedirectToAction("Skills", "Skill", new { id = id });
+                        ModelState.Clear();
+                        return RedirectToAction("Skills", "Skill");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Expired", "Session");
+                    }
+
                 }
             }
             catch (System.Exception)

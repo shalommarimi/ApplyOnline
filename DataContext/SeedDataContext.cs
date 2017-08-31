@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using ApplyOnline.Models;
+using ApplyOnline.Services;
 using System.Collections.Generic;
 using System.Data.Entity;
 
@@ -10,10 +11,10 @@ namespace ApplyOnline.DataContext
         protected override void Seed(DataDbContext context)
         {
 
-
+            var hashingPassword = new Hashing();
             IList<AdministrationCredentials> admin = new List<AdministrationCredentials>();
-            admin.Add(new AdministrationCredentials() { FirstName = "Shalom", LastName = "Marimi", Username = "shalom@gmail.com", Password = "Lulama.01" });
-            admin.Add(new AdministrationCredentials() { FirstName = "Lucky", LastName = "Mathebula", Username = "lucky@gmail.com", Password = "Lucky.01" });
+            admin.Add(new AdministrationCredentials() { FirstName = "Shalom", LastName = "Marimi", Username = "shalommarimi@gmail.com", Password = hashingPassword.HashPassword("Lulama.01") });
+            admin.Add(new AdministrationCredentials() { FirstName = "Lucky", LastName = "Mathebula", Username = "lucky@gmail.com", Password = hashingPassword.HashPassword("Lucky.01") });
 
 
             foreach (AdministrationCredentials adm in admin)

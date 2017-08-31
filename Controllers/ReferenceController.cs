@@ -1,5 +1,6 @@
 ﻿using ApplyOnline.DataContext;
 using ApplyOnline.Models;
+using System;
 using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
@@ -13,20 +14,28 @@ namespace ApplyOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult References(int id, Reference reference)
+        public ActionResult References(Reference reference)
         {
             try
             {
                 using (var dbContext = new DataDbContext())
                 {
-                    reference.FkApplicantId = id;
-                    dbContext.References.Add(reference);
-                    dbContext.SaveChanges();
-                    ModelState.Clear();
-                    return RedirectToAction("Completed", "Application");
+                    if ((Session["ApplicantID"] != null))
+                    {
+                        reference.FkApplicantId = Convert.ToInt32(Session["ApplicantID"]);
+                        dbContext.References.Add(reference);
+                        dbContext.SaveChanges();
+                        ModelState.Clear();
+                        return RedirectToAction("Completed", "Application");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Expired", "Session");
+                    }
+
                 }
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 ViewBag.MessageErrorValidation = " Validation error occured!";
                 return View(); throw;

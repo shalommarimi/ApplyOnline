@@ -302,12 +302,12 @@
     <Compile Include="Controllers\ApplicantController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\AuthenticateController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ApplyController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostContentController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Controllers\SkillController.cs" />
     <Compile Include="Controllers\SyllabusController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
@@ -355,7 +355,6 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
-    <Content Include="Views\Contact\EmailUs.cshtml" />
     <Content Include="Views\Syllabus\Syllabus.cshtml" />
     <Content Include="Views\Administrator\Dashboard.cshtml" />
     <Content Include="Views\Apply\PersonalInformation.cshtml" />
@@ -366,6 +365,7 @@
     <Content Include="Views\Application\Completed.cshtml" />
     <Content Include="Views\Reference\References.cshtml" />
     <Content Include="Views\Skill\Skills.cshtml" />
+    <Content Include="Views\Session\Expired.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

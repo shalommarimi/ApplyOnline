@@ -8,7 +8,7 @@ namespace ApplyOnline.Controllers
         [Authorize]
         public ActionResult Dashboard()
         {
-            if (Session["FirstName"] != null && Session["LastName"] != null)
+            if (Session["FirstName"] != null && Session["LastName"] != null && Session["PkApplicantId"] != null)
             {
                 return View();
             }

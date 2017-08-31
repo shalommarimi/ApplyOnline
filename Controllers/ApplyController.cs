@@ -41,13 +41,11 @@ namespace ApplyOnline.Controllers
 
                             dbContext.PersonalInformations.Add(personal);
                             dbContext.SaveChanges();
-
-
-
-
                             ModelState.Clear();
-                            int id = personal.PkApplicantId;
-                            return RedirectToAction("Qualification", "Education", new { id = id });
+
+                            //Store UserId or ApplicantId on a Session, Pass it using session instead of appending on Url
+                            Session["ApplicantID"] = personal.PkApplicantId;
+                            return RedirectToAction("Qualification", "Education");
 
                         }
                         else
