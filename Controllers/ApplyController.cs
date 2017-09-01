@@ -31,7 +31,7 @@ namespace ApplyOnline.Controllers
                 {
                     try
                     {
-                        if (!dbContext.PersonalInformations.Any(t => t.IdNumber.Equals(personal.IdNumber)))
+                        if (!dbContext.PersonalInformations.Any(t => t.IdNumber.Equals(personal.IdNumber)) || !dbContext.PersonalInformations.Any(t => t.EmailAddress.Equals(personal.EmailAddress)))
                         {
                             var HashPassword = new Hashing();
 
@@ -50,8 +50,7 @@ namespace ApplyOnline.Controllers
                         }
                         else
                         {
-                            ModelState.Clear();
-                            ViewBag.Exist = " Applicant with Identity Number " + personal.IdNumber + " already exits. Please go to \"LOGIN\"";
+                            ViewBag.Exist = " Applicant with Identity Number " + personal.IdNumber + "or Email Address " + personal.EmailAddress + " already exits. Please go to \"LOGIN\"";
                             return View();
                         }
 

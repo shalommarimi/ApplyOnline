@@ -21,7 +21,7 @@ namespace ApplyOnline.Controllers
 
 
         [HttpPost]
-        public ActionResult Login(PersonalInformation userInput)
+        public ActionResult Login(PersonalInformation personalInformation)
         {
 
             using (var context = new DataDbContext())
@@ -29,11 +29,11 @@ namespace ApplyOnline.Controllers
                 try
                 {
                     //Comparing entered Password before it is compared
-                    var HashPassword = new Hashing();
-                    userInput.New_Password = HashPassword.HashPassword(userInput.New_Password);
+                    var hash = new Hashing();
+                    personalInformation.New_Password = hash.HashPassword(personalInformation.New_Password);
 
 
-                    var user = context.PersonalInformations.Single(u => u.New_Password == userInput.New_Password && u.Username == userInput.Username);
+                    var user = context.PersonalInformations.Single(u => u.New_Password == personalInformation.New_Password && u.Username == personalInformation.Username);
                     if (user != null)
                     {
                         Session["PkApplicantId"] = Convert.ToInt32(user.PkApplicantId);
