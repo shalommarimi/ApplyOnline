@@ -16,9 +16,6 @@ namespace ApplyOnline.Controllers
             return View();
         }
 
-
-
-
         [HttpPost]
 
         public ActionResult PersonalInformation(PersonalInformation personal)

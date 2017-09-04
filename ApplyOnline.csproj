@@ -340,8 +340,6 @@
     <Compile Include="Services\Notifications.cs" />
     <Compile Include="Services\PostLatest.cs" />
     <Compile Include="Services\RegisterSubscriber.cs" />
-    <Compile Include="Services\GetUsertId.cs" />
-    <Compile Include="Services\SaveApplicant.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

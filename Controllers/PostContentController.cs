@@ -41,7 +41,7 @@ namespace ApplyOnline.Controllers
                 var postNews = new PostLatest();
                 postNews.NewsPost(content);
 
-                //Send Notifications
+                //Send notifications to Subscribers
                 var notify = new Notifications();
                 notify.SendNewContent(content);
 

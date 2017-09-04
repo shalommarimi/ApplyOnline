@@ -13,15 +13,8 @@ namespace ApplyOnline.Services
 
                 try
                 {
-                    var subscribe = new Subscribe
-                    {
-                        FirstName = sub.FirstName,
-                        LastName = sub.LastName,
-                        EmailAddress = sub.EmailAddress,
-                        FkGenderId = sub.FkGenderId
 
-                    };
-                    context.Subscribers.Add(subscribe);
+                    context.Subscribers.Add(sub);
                     context.SaveChanges();
                 }
                 catch (System.Exception)

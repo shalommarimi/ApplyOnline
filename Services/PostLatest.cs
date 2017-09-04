@@ -12,16 +12,7 @@ namespace ApplyOnline.Services
             {
                 try
                 {
-                    var objNewsContent = new NewContent
-                    {
-                        PostSubject = content.PostSubject,
-                        PostBody = content.PostBody,
-                        PostType = content.PostType,
-                        PostEntryDate = content.PostEntryDate
-
-
-                    };
-                    context.NewContent.Add(objNewsContent);
+                    context.NewContent.Add(content);
                     context.SaveChanges();
 
                 }

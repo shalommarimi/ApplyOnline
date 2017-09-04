@@ -17,14 +17,7 @@ body {
 	background-color: #fff;
 	border-bottom: 3px solid #2A2B7B;
 }
-a:active {
-	background-color: #FCBE1B;
-	border : 10px solid #fff;
-}
-a:focus {
-	background-color: #FCBE1B;
-	border : 10px solid #fff;
-   }
+
 
 /* logo in header(mobile version) and side-nav (tablet & desktop) */
 .logo {

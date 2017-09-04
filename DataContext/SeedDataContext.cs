@@ -15,6 +15,8 @@ namespace ApplyOnline.DataContext
             IList<AdministrationCredentials> admin = new List<AdministrationCredentials>();
             admin.Add(new AdministrationCredentials() { FirstName = "Shalom", LastName = "Marimi", Username = "shalommarimi@gmail.com", Password = hashingPassword.HashPassword("Lulama.01") });
             admin.Add(new AdministrationCredentials() { FirstName = "Lucky", LastName = "Mathebula", Username = "lucky@gmail.com", Password = hashingPassword.HashPassword("Lucky.01") });
+            admin.Add(new AdministrationCredentials() { FirstName = "General", LastName = "System", Username = "general@gmail.com", Password = hashingPassword.HashPassword("General.01") });
+
 
 
             foreach (AdministrationCredentials adm in admin)

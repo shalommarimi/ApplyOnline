@@ -43,7 +43,6 @@ namespace ApplyOnline.Controllers
                         FormsAuthentication.SetAuthCookie(user.Username, false);
                         return RedirectToAction("Dashboard", "Applicant");
 
-
                     }
 
                 }
