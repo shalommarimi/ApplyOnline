@@ -72,7 +72,7 @@ namespace ApplyOnline.Controllers
             }
             else
             {
-                ViewBag.MessageDidNotApply = " Applicant Information or reCAPTCHA validation failed";
+                ViewBag.DidNotApply = " Applicant Information or reCAPTCHA validation failed";
                 return View();
             }
 
