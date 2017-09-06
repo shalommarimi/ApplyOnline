@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Application Process</title>
+    <title>Qualifications</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
 
 
-        @using (Html.BeginForm("Qualification", "Apply"))
+        @using (Html.BeginForm("Qualification", "Education"))
         {
             @Html.AntiForgeryToken()
 
@@ -28,15 +28,13 @@
             <div class="form-horizontal">
 
                 <div id="cvsection">
-                    <h3>Work Experiences</h3>
+                    <h3>Educational Qualifications</h3>
                 </div>
 
 
 
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
-               @*---------------------*@
 
                 <div class="row">
                     <div class="col-md-6">
@@ -74,7 +72,7 @@
                                 @Html.ValidationMessageFor(model => model.QualYearObtained, "", new { @class = "text-danger" })
                             </div>
                         </div>
-                       
+
                     </div>
 
 
@@ -85,7 +83,7 @@
                         <div class="col-md-offset-2 col-md-10">
 
                             <input type="reset" value="Reset" class="btn btn-default" />
-                            <input type="button" value="Next" class="btn btn-default" onclick="@("window.location.href='" + @Url.Action("WorkExperience", "Apply") + "'") " />
+                            <input type="submit" value="Submit & Continue" class="btn btn-default"/>
 
                         </div>
                     </div>

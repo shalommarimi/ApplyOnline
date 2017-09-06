@@ -1,10 +1,7 @@
 ﻿.body {
     text-align: center;
-    /*background-image: url(../Images/BBD-Custom-Login.png);
-    background-attachment: fixed;
-    background-repeat: no-repeat;*/
-    background-color:#25283d;
-}
+   
+    }
 
 .body-content {
     text-align: center;
@@ -22,7 +19,9 @@
     text-align: center;
 }
 
-
+.form-control-lg, #texta {
+    border:1px solid #fcbe1b;
+}
 
     .sylla-section h3:after {
         width: 100px;
@@ -35,15 +34,23 @@
     }
 
 
-
 .section-map h3 {
-    color: #ffffff;
+    color: #fff;
     font-family: 'Yantramanav', sans-serif;
     text-align: center;
 }
 
-
-
+.cont {
+    font-size:20px;
+}
+    #social p{
+        font-size:15px;
+        color:#fff;
+    }
+#social i {
+    font-size:20px;
+    margin:3px;
+}
     .section-map h3:after {
         width: 100px;
         height: 2px;
@@ -63,8 +70,7 @@
     }
 
 .form-control {
-    height: 40px;
-    width: 300px;
+  
     color: #2A2B7B;
 }
 
@@ -92,7 +98,7 @@
 
 
 #map {
-    height: 400px;
+    height: 500px;
     padding: 10px 20px;
     margin: auto;
     width: 100%;
@@ -105,7 +111,7 @@
 }
 
 .send-email h3 {
-    color: #ffffff;
+    color: #2A2B7B;
     font-family: 'Yantramanav', sans-serif;
     text-align: center;
 }

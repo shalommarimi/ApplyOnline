@@ -17,23 +17,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Administrator Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-   
-      
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     @Styles.Render("~/CssC")
     @Scripts.Render("~/MyScriptsC")
+
 
 
 </head>
 <body>
     <div class="header">
-       
+
         <div class="logo">
             <span>DDNA</span>
             <span>Administrator</span>
-           
+
         </div>
         <a href="#" class="nav-trigger"><span></span></a>
-                
+
     </div>
 
     <div class="side-nav">
@@ -48,49 +52,49 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="#applicants" data-toggle="collapse">
                         <span><i class="fa fa-user"></i></span>
                         <span>Applicants</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" id="message">
+                    <a href="#sendemail" data-toggle="collapse">
                         <span><i class="fa fa-envelope"></i></span>
                         <span>Messages</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#stats" data-toggle="collapse">
                         <span><i class="fa fa-bar-chart"></i></span>
                         <span>Statistics</span>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="#" id="attach_box">
+                <li>
+                    <a href="#makenewentry" data-toggle="collapse" class="active">
                         <span><i class="fa fa-pencil-square"></i></span>
                         <span>New Entry</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#vacancies" data-toggle="collapse">
                         <span><i class="fa fa-briefcase"></i></span>
                         <span>Vacancies</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#announce" data-toggle="collapse">
                         <span><i class="fa fa-bullhorn"></i></span>
                         <span>Announcements</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#news" data-toggle="collapse">
                         <span><i class="fa fa-newspaper-o"></i></span>
                         <span>News</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#subscribers" data-toggle="collapse">
                         <span><i class="fa fa-check-square"></i></span>
                         <span>Subscribers</span>
                     </a>
@@ -104,76 +108,135 @@
 
     <div class="main-content">
 
-        <div id="sec_box" style="display: none;">
+
+        <div class="panel-collapse" id="makenewentry">
             <div class="title">
                 <h3>Make a new entry</h3>
             </div>
 
-            @using (Html.BeginForm("PostNews", "PostContent"))
+            <div class="form-horizontal">
+                @using (Html.BeginForm("PostNews", "PostContent"))
             {
-                @Html.AntiForgeryToken()
+                    @Html.AntiForgeryToken()
 
+                    <div class="form-horizontal">
+
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <br />
+                        <br />
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PostType, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-xs-4">
+                                @Html.DropDownListFor(model => model.PostType, Posttypes, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.PostType, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PostSubject, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-xs-4">
+                                @Html.EditorFor(model => model.PostSubject, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PostSubject, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PostBody, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-xs-4">
+                                @Html.TextAreaFor(model => model.PostBody, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.PostBody, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PostEntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-xs-4">
+                                @Html.EditorFor(model => model.PostEntryDate, new { htmlAttributes = new { @class = "form-control col-xs-4", disabled = "disabled", @readonly = "readonly", @placeholder = System.DateTime.Now } })
+                                @Html.ValidationMessageFor(model => model.PostEntryDate, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Publish" class="btn" />
+                                <input type="reset" value="Reset" class="btn" />
+                                <input type="button" name="submit" class="btn" value="Sign Out" onclick="location.href='@Url.Action("Logout", "Administrator")'" />
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+
+        </div>
+
+
+
+        <div class="panel-collapse collapse" id="sendemail">
+                <div class="title">
+                    <h3>Send Email</h3>
+                </div>
+                <br />
+                <br />
                 <div class="form-horizontal">
+                    @using (Html.BeginForm("Send","PostContent"))
+                {
+                        @Html.AntiForgeryToken()
 
 
-                    <hr />
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PostType, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-xs-4">
-                            @Html.DropDownListFor(model => model.PostType, Posttypes, new { @class = "form-control col-xs-4" })
-                            @Html.ValidationMessageFor(model => model.PostType, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PostSubject, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-xs-4">
-                            @Html.EditorFor(model => model.PostSubject, new { htmlAttributes = new { @class = "form-control col-xs-4" } })
-                            @Html.ValidationMessageFor(model => model.PostSubject, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PostBody, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-xs-4">
-                            <div class="mailbody">
-                                @Html.TextAreaFor(model => model.PostBody, new { @class = "form-control col-xs-4" })
+                        <div class="form-horizontal">
+                            <div class="form-group row">
+                                <label for="text-input" class="control-label col-md-2">Recipient</label>
+                                <div class="col-xs-4">
+                                    <input class="form-control" type="text" name="txtEmail">
+                                </div>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="subject-input" class="control-label col-md-2">Subject</label>
+                                <div class="col-xs-4">
+                                    <input class="form-control" type="text" name="txtSubject">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-input" class="control-label col-md-2">Message</label>
+                                <div class="col-xs-4">
+                                    <textarea class="form-control" type="text" name="txtMessage"></textarea>
+                                </div>
                             </div>
 
-                            @Html.ValidationMessageFor(model => model.PostBody, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PostEntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-xs-4">
-                            @Html.EditorFor(model => model.PostEntryDate, new { htmlAttributes = new { @class = "form-control col-xs-4", disabled = "disabled", @readonly = "readonly", @placeholder = System.DateTime.Now } })
-                            @Html.ValidationMessageFor(model => model.PostEntryDate, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Publish" class="btn" />
-                            <input type="reset" value="Reset" class="btn" />
-                            <input type="button" name="submit" class="btn" value="Sign Out" onclick="location.href='@Url.Action("Logout", "Administrator")'" />
+                            <div class="form-group">
+                                <label for="attachment-input" class="control-label col-md-2">Attachement</label>
+                                <div class="col-xs-4">
+                                    <input class="form-control" type="text" name="attachment">
+                                </div>
+                            </div>
 
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Send" class="btn" />
+                                <input type="reset" value="Reset" class="btn" />
+                                <input type="button" name="submit" class="btn" value="Sign Out" onclick="location.href='@Url.Action("Logout", "Administrator")'" />
+                                <div class="tooltip">
+                                    <p style="color:red">Hover over me</p>
+                                    <span class="tooltiptext">Please "CLICK" on tab to Open or Close</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    }
+                   
                 </div>
 
 
-            }
 
-        </div>
-
-        <div class="messages" id="messages">
-
-
-        </div>
-
+            </div>
     </div>
 
 

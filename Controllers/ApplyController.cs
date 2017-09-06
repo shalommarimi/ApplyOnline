@@ -9,7 +9,7 @@ namespace ApplyOnline.Controllers
     public class ApplyController : Controller
     {
 
-        // GET: Authentication
+
         public ActionResult PersonalInformation()
         {
 
@@ -20,8 +20,12 @@ namespace ApplyOnline.Controllers
 
         public ActionResult PersonalInformation(PersonalInformation personal)
         {
+            //Validate reCAPTCHA
+            var CAPTCHA = new ValidateReCAPTCHA();
+            bool result = CAPTCHA.IsReCAPTCHAvalid();
 
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid && result)
             {
 
                 using (var dbContext = new DataDbContext())
@@ -68,7 +72,7 @@ namespace ApplyOnline.Controllers
             }
             else
             {
-                ViewBag.MessageDidNotApply = " It seems like we could not send your Application";
+                ViewBag.MessageDidNotApply = " Applicant Information or reCAPTCHA validation failed";
                 return View();
             }
 

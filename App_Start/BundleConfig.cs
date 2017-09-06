@@ -10,7 +10,9 @@ namespace ApplyOnline.App_Start
             bundles.Add(new ScriptBundle("~/MyScriptsC").Include(
                  "~/MyScripts/main.js",
                  "~/MyScripts/jquery-3.0.0.min.js",
-                 "~/MyScripts/highcharts.js"
+                 "~/MyScripts/highcharts.js",
+                  "~/MyScripts/highcharts.js"
+
                 ));
 
             bundles.Add(new ScriptBundle("~/MyScriptsB").Include(
@@ -25,7 +27,8 @@ namespace ApplyOnline.App_Start
                 "~/Scripts/jquery-ui.js",
                 "~/Scripts/main.js",
                 "~/Scripts/jquery-3.0.0.min.js",
-                "~/Scripts/bootstrap.min.js"
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/jquery-ui-1.12.1.min.js"
 
                  ));
 
@@ -33,6 +36,7 @@ namespace ApplyOnline.App_Start
 
             bundles.Add(new StyleBundle("~/ContentB").Include(
                    "~/Content/jquery-ui.css"
+
 
                  ));
 

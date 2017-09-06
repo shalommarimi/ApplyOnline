@@ -3,30 +3,32 @@ using System.Web.Mvc;
 
 namespace ApplyOnline.Controllers
 {
-    public class SyllabusController : Controller
+    public class ContactController : Controller
     {
         // GET: Syllabus
-        public ActionResult Syllabus()
+        public ActionResult Contact()
         {
             return View();
         }
         [HttpPost]
 
-        public ViewResult Send(Models.Email email)
+        public ViewResult Send(FormCollection email)
         {
 
 
             if (ModelState.IsValid)
             {
-
+                string emailFrom = email["txtEmail"];
+                string subject = email["txtSubject"];
+                string message = email["txtMessage"];
 
                 using (var mail = new MailMessage())
                 {
 
                     mail.To.Add("shalommarimi@gmail.com");
                     mail.From = new MailAddress("learnerslogsystem@gmail.com");
-                    mail.Subject = email.Subject + " Sender Email: " + email.SentFrom;
-                    mail.Body = "Enquiry Content: " + email.Message;
+                    mail.Subject = "Sender: " + emailFrom;
+                    mail.Body = "Enquiry Content: " + message;
                     mail.IsBodyHtml = true;
                     SmtpClient smtp = new SmtpClient();
                     smtp.Host = "smtp.gmail.com";
@@ -37,7 +39,8 @@ namespace ApplyOnline.Controllers
                     smtp.EnableSsl = true;
                     smtp.Send(mail);
                 }
-                return View("Syllabus");
+                ViewBag.Sent = "Your enquiry has been sent. We will respond to you soon";
+                return View("Contact");
             }
             else
             {

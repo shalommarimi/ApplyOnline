@@ -1,0 +1,168 @@
+﻿@model ApplyOnline.Models.Email
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body>
+    <div id="up"></div>
+
+    <div class="body-content">
+
+
+        <header>
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="@Url.Action("Index","Home")">Home</a>
+                    
+                    <a href="#email" class="scroll">Scroll Down</a>
+                </div>
+
+                <div class="menu-slider">
+                    <span onclick="openNav()">&#9776; MENU</span>
+
+                </div>
+
+            </header>
+
+
+        <section class="send-email">
+
+            <h3 class="heading">Send Us Your Question</h3>
+
+            <div class="container">
+
+                <div class="form-horizontal">
+                    @using (Html.BeginForm("Send", "Contact"))
+            {
+                        @Html.ValidationSummary()
+
+
+                        <fieldset>
+                            <div class="container">
+                                <div class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label for="emailtxt" class="col-sm-2 col-form-label col-form-label-lg">Your Email Address</label>
+                                        <div class="col-sm-7">
+                                            <input type="email" class="form-control form-control-lg" name="txtEmail" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="subjecttxt" class="col-sm-2 col-form-label col-form-label-sm">Enquiry Caption</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" class="form-control form-control-lg" name="txtSubject" required />
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="enquiry" class="col-sm-2 col-form-label col-form-label-sm">Enquiry Message</label>
+                                        <div class="col-sm-7">
+                                            <textarea class="form-control" id="texta"rows="12" name="txtMessage" required></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <div class="col-sm-6">
+                                            <input type="submit" value="Submit" class="btn" />
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    }
+                </div>
+
+
+
+                @if (ViewBag.Sent != null)
+                {
+
+                    <div class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success! </strong>@ViewBag.Sent
+                    </div>
+                }
+            </div>
+
+        </section>
+
+
+
+        <section class="section-map">
+            <h3 class="heading">Our Location</h3>
+            <div id="map"></div>
+        </section>
+    </div>
+
+
+    <section class="social" id="social">
+        <div class="text-center" id="email">
+            <h3 class="cont">Contact Information</h3>
+            <div>
+                <text><i class="fa fa-location-arrow"> Location </i></text>
+                <p>219 Surrey Place, Randburg, 2109, Johannesburg</p>
+            </div>
+            <div class="text-center">
+                <a href="#up" class="scroll fa fa-arrow-up"></a><br />
+            </div>
+
+
+            <div>
+                <text><i class="fa fa-phone"> Call </i>  <i class="fa fa-envelope"> Email</i></text>
+                <p style="color:#fff;">Office +27 (11) 759 5930 - info@dynamicdna.co.za</p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(-26.0951756, 27.998679700000025);
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = { center: myCenter, zoom: 5 };
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({ position: myCenter });
+            marker.setMap(map);
+        }
+    </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "150px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6I0udxhaIloq_3-9wDMJ6N_Fv45ZzBPQ&callback=myMap"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 2000);
+            });
+        });
+    </script>
+
+</body>
+</html>

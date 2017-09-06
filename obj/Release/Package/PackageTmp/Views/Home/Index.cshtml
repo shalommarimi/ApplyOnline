@@ -39,7 +39,7 @@
                     <li><a href="#ann" class="scroll">Announcements</a></li>
                     <li><a href="#news" class="scroll">Our News</a></li>
                     <li><a href="#ins" class="scroll">Our Insights</a></li>
-                    <li>@Html.ActionLink("Information", "Syllabus", "Syllabus")</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "Contact")</li>
                     <li><a href="#part" class="scroll">Partnerships</a></li>
                     <li>@Html.ActionLink("Login", "Login", "Authenticate")</li>
                     <li><a href="#social" class="scroll"><abbr class="fa fa-thumbs-up">Like Us</abbr></a></li>
@@ -79,6 +79,15 @@
                     <div class="alert alert-danger">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <strong>Oops!</strong>@ViewBag.ErrorSub
+                    </div>
+                }
+
+                @if (ViewBag.Error != null)
+                {
+
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Oops!</strong>@ViewBag.Error
                     </div>
                 }
             </div>
@@ -319,8 +328,8 @@
                     <a href="#" class="fa fa-youtube"></a>
                     <a href="#" class="fa fa-instagram"></a>
                     <a href="#landing" class="scroll fa fa-home"></a>
-                    <text class="text-sub" data-toggle="modal" data-target="#MyModal">Subscribe </></text>
-                    <text class="text-sub" data-toggle="modal" data-target="#MyModalAdmin">  Dashboard</></text>
+                    <text class="text-sub" data-toggle="modal" data-target="#MyModal"> Subscribe </></text>
+                    <text class="text-sub" data-toggle="modal" data-target="#MyModalAdmin">  Dashboard </></text>
                    
                 </div>
 
@@ -335,10 +344,10 @@
         <footer>
             <p>
                 &copy; 2010
-                <script>new Date().getFullYear() > 2010 && document.write("- " + new Date().getFullYear());</script> Dynamic DNA, DTH Group
+                <script>new Date().getFullYear() > 2010 && document.write("- " + new Date().getFullYear());</script> Dynamic DNA - DTH Group
             </p>
 
-            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            @*<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>*@
             <script type="text/javascript">
                 jQuery(document).ready(function ($) {
                     $(".scroll").click(function (event) {
@@ -353,10 +362,10 @@
 
 
 
-    @*My Admin Login*@
+   
     <div id="MyModalAdmin" class="modal fade" role="dialog">
 
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-sm" id="modals">
 
             <div class="modal-content">
 
@@ -380,9 +389,9 @@
 
                                     
 
-                                    <div class="col-sm-3">
+                                    <div class="col-xs-4">
                                         <label for="ex2">Username</label>
-                                        <input class="form-control" name="txtUsername" type="text" required>
+                                        <input class="form-control col-xs-4" name="txtUsername" type="text" required>
 
                                     </div>
 
@@ -393,9 +402,9 @@
 
                                    
 
-                                    <div class="col-sm-3">
+                                    <div class="col-xs-3">
                                         <label for="ex2">Password</label>
-                                        <input class="form-control" name="txtPassword" type="password" required>
+                                        <input class="form-control col-xs-4" name="txtPassword" type="password" required>
 
                                     </div>
 

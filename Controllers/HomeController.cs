@@ -20,12 +20,14 @@ namespace ApplyOnline.Controllers
 
 
         [HttpPost]
-
         public ViewResult Register(Subscribe subscribe)
         {
 
+            var CAPTCHA = new ValidateReCAPTCHA();
+            bool result = CAPTCHA.IsReCAPTCHAvalid();
 
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid && result)
             {
                 using (var dbContext = new DataDbContext())
                 {
@@ -43,9 +45,9 @@ namespace ApplyOnline.Controllers
                         else
                         {
 
-                            var registerSubscriber = new RegisterSubscriber();
-                            registerSubscriber.Register(subscribe);
 
+                            dbContext.Subscribers.Add(subscribe);
+                            dbContext.SaveChanges();
 
 
                             ViewBag.Message = "Thank you for subscribing " + subscribe.FirstName + "!";
@@ -56,7 +58,7 @@ namespace ApplyOnline.Controllers
                     catch (System.Exception)
                     {
 
-                        ViewBag.MessageSub = "Database Error!";
+                        ViewBag.MessageSub = "Internal Error! Sorry for the inconvenience";
                         ModelState.Clear();
                         return View("Index");
                     }
@@ -67,7 +69,7 @@ namespace ApplyOnline.Controllers
             }
             else
             {
-                ViewBag.Error = "Sorry! Could not subscribe User ";
+                ViewBag.Error = " Could not subscribe User, reCAPTCHA or User Information verification failed";
                 return View("Index");
 
             }
