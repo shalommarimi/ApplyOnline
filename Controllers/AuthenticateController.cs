@@ -41,7 +41,7 @@ namespace ApplyOnline.Controllers
                         Session["LastName"] = user.FirstName.ToString();
 
                         FormsAuthentication.SetAuthCookie(user.Username, false);
-                        return RedirectToAction("Dashboard", "Applicant");
+                        return RedirectToAction("Dashboard", "Applicant", new { id = Session["PkApplicantId"] });
 
                     }
 

@@ -403,14 +403,13 @@
     <Content Include="Views\Administrator\Dashboard.cshtml" />
     <Content Include="Views\Apply\PersonalInformation.cshtml" />
     <Content Include="Views\Authenticate\Login.cshtml" />
-    <Content Include="Views\Applicant\Dashboard.cshtml" />
     <Content Include="Views\Education\Qualification.cshtml" />
     <Content Include="Views\Work\WorkExperience.cshtml" />
     <Content Include="Views\Application\Completed.cshtml" />
     <Content Include="Views\Reference\References.cshtml" />
     <Content Include="Views\Skill\Skills.cshtml" />
     <Content Include="Views\Session\Expired.cshtml" />
-    <Content Include="Views\Applicant\Edit.cshtml" />
+    <Content Include="Views\Applicant\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
