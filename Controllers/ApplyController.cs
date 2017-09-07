@@ -21,8 +21,8 @@ namespace ApplyOnline.Controllers
         public ActionResult PersonalInformation(PersonalInformation personal)
         {
             //Validate reCAPTCHA
-            var CAPTCHA = new ValidateReCAPTCHA();
-            bool result = CAPTCHA.IsReCAPTCHAvalid();
+            var captcha = new ValidateReCAPTCHA();
+            bool result = captcha.IsReCAPTCHAvalid();
 
 
             if (ModelState.IsValid && result)

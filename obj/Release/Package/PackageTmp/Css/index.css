@@ -18,7 +18,9 @@ html, body {
 	background-attachment: fixed !important;
 	background-size: cover;
 }
-
+.g-recaptcha {
+	margin:3px;
+}
 .intro {
 	height: 100%;
 	width: 100%;

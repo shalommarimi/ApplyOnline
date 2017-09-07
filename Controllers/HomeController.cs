@@ -23,8 +23,8 @@ namespace ApplyOnline.Controllers
         public ViewResult Register(Subscribe subscribe)
         {
 
-            var CAPTCHA = new ValidateReCAPTCHA();
-            bool result = CAPTCHA.IsReCAPTCHAvalid();
+            var captcha = new ValidateReCAPTCHA();
+            bool result = captcha.IsReCAPTCHAvalid();
 
 
             if (ModelState.IsValid && result)
@@ -34,6 +34,7 @@ namespace ApplyOnline.Controllers
 
                     try
                     {
+
                         if (dbContext.Subscribers.Any(t => t.EmailAddress.Equals(subscribe.EmailAddress)))
                         {
 

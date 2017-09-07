@@ -23,56 +23,57 @@
             <img src="~/Images/login_icon.png" />
             @using (Html.BeginForm("Login", "Authenticate"))
             {
-            @Html.AntiForgeryToken()
-
-            <div class="form-horizontal">
+                @Html.AntiForgeryToken()
 
 
-                <hr />
+                <div class="form-horizontal">
 
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @if (ViewBag.Message != null)
-                {
-                <div class="col-md-2" id="error">@ViewBag.Message</div>
+                    <hr />
+
+
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="col-md-2" id="error">@ViewBag.Message</div>
                     }
-                <div class="form-group">
 
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your Username" } })
-                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="form-group">
-
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.New_Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Please enter your Password" } })
-
-                        @Html.ValidationMessageFor(model => model.New_Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                    <div class="container">
 
 
-
-                <div class="form-group">
-                    <div class="text-center">
-                        <input type="submit" value="Login" class="btn btn-default" id="btn" />
-
+                        <div class="form-group row">
+                            <label for="Username" class="col-sm-1 col-form-label col-form-label-lg">Username</label>
+                            <div class="col-sm-4">
+                                <input type="email"  name="txtUsername"class="form-control form-control-lg" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Password" class="col-sm-1 col-form-label col-form-label-sm">Password</label>
+                            <div class="col-sm-4">
+                                <input type="password" name="txtPassword" class="form-control form-control-lg" />
+                            </div>
+                        </div>
 
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="text-center" id="forgotpassword">
-                        <a href="#MyModal" data-toggle="modal" data-target="#MyModal"><p>Forgot Password <i class="fa fa-question-circle" aria-hidden="true"></i></a>
 
+                    <div class="form-group">
+                        <div class="text-center">
+                            <input type="submit" value="Login" class="btn btn-default" id="btn" />
+                        </div>
                     </div>
+                    <div class="form-group">
+                        <div class="text-center" id="forgotpassword">
+                            <a href="#MyModal" data-toggle="modal" data-target="#MyModal"><p>Forgot Password <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+
+                        </div>
+                    </div>
+                    <a href="@Url.Action("Index", "Home")"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></a>
                 </div>
-                <a href="@Url.Action("Index", "Home")"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></a>
-            </div>
             }
 
 
         </div>
+
     </section>
 
 
@@ -92,45 +93,45 @@
                 <div class="modal-body">
                     <div class="form-horizontal">
                         @using (Html.BeginForm("Register", "Home"))
-            {
-                        @Html.ValidationSummary()
+                        {
+                            @Html.ValidationSummary()
 
 
-                        <fieldset>
-                            <div class="form-group">
+                            <fieldset>
+                                <div class="form-group">
 
 
-                                @Html.LabelFor(model => model.EmailAddress, new { @class = "col-sm-4" })
+                                    @Html.LabelFor(model => model.EmailAddress, new { @class = "col-sm-4" })
 
-                                <div class="col-sm-3">
-                                    @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", @placeholder = "Enter Your Email Address" })
-                                    @Html.ValidationMessageFor(model => model.EmailAddress)
+                                    <div class="col-sm-3">
+                                        @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control", @placeholder = "Enter Your Email Address" })
+                                        @Html.ValidationMessageFor(model => model.EmailAddress)
+                                    </div>
+
                                 </div>
 
-                            </div>
-
-                            <div class="form-group">
+                                <div class="form-group">
 
 
-                                @Html.LabelFor(model => model.CellNumber, new { @class = "col-sm-4" })
+                                    @Html.LabelFor(model => model.CellNumber, new { @class = "col-sm-4" })
 
-                                <div class="col-sm-3">
-                                    @Html.TextBoxFor(model => model.CellNumber, new { @class = "form-control", @placeholder = "Enter Your Cell Number" })
-                                    @Html.ValidationMessageFor(model => model.CellNumber)
+                                    <div class="col-sm-3">
+                                        @Html.TextBoxFor(model => model.CellNumber, new { @class = "form-control", @placeholder = "Enter Your Cell Number" })
+                                        @Html.ValidationMessageFor(model => model.CellNumber)
+                                    </div>
+
                                 </div>
 
-                            </div>
+                                <div class="mybtns">
 
-                            <div class="mybtns">
-
-                                <input type="submit" name="submit" class="btn" value="Send Reset Link" />
-                                <input type="reset" name="submit" class="btn" value="Reset" />
-                                @*<input type="button" name="submit" class="btn btn-warning" value="Logout" onclick="location.href='@Url.Action("Logout", "Applicant")'" />*@
+                                    <input type="submit" name="submit" class="btn" value="Send Reset Link" />
+                                    <input type="reset" name="submit" class="btn" value="Reset" />
+                                    @*<input type="button" name="submit" class="btn btn-warning" value="Logout" onclick="location.href='@Url.Action("Logout", "Applicant")'" />*@
 
 
-                            </div>
+                                </div>
 
-                        </fieldset>
+                            </fieldset>
 
                         }
                     </div>
@@ -143,7 +144,7 @@
         </div>
     </div>
 
-   
+
 
 </body>
 </html>

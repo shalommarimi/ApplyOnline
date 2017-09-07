@@ -4,7 +4,11 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 
-    var gender = new SelectList(new string[] { "1", "2", "3" });
+    List<SelectListItem> gender = new List<SelectListItem>();
+
+    gender.Add(new SelectListItem() { Text = "Male", Value = "1" });
+    gender.Add(new SelectListItem() { Text = "Female", Value = "2" });
+    gender.Add(new SelectListItem() { Text = "Other", Value = "3" });
 
 }
 
@@ -15,9 +19,6 @@
 <head>
     <title>Dynamic DNA Online Application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-
-
 
 </head>
 
@@ -25,7 +26,7 @@
 
     <div id="landing">
         <header class="cd-auto-hide-header">
-            @*<div class="logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>*@
+           
             <nav class="cd-primary-nav">
                 <a href="#cd-navigation" class="nav-trigger">
                     <span>
@@ -90,7 +91,7 @@
                     </div>
                 }
 
-              
+
             </div>
 
         </div>
@@ -177,9 +178,9 @@
                                 </fieldset>
                             }
                         </div>
-                        
+
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button class="close" type="button" data-dismiss="modal"><i class="fa fa-window-close"></i></button>

@@ -57,6 +57,7 @@ namespace ApplyOnline.DataContext
             IList<Gender> genders = new List<Gender>();
             genders.Add(new Gender() { GenderValue = "Male" });
             genders.Add(new Gender() { GenderValue = "Female" });
+            genders.Add(new Gender() { GenderValue = "Other" });
 
 
             foreach (Gender gen in genders)

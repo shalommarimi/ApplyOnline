@@ -410,6 +410,7 @@
     <Content Include="Views\Reference\References.cshtml" />
     <Content Include="Views\Skill\Skills.cshtml" />
     <Content Include="Views\Session\Expired.cshtml" />
+    <Content Include="Views\Applicant\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

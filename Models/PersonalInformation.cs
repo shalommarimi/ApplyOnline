@@ -80,7 +80,7 @@ namespace ApplyOnline.DataAccessLayer
         public string HomeLanguage { get; set; }
 
         [Required]
-        [Display(Name = "Prefereferd Language")]
+        [Display(Name = "Prefered Language")]
         public string PreferedCL { get; set; }
 
 
@@ -121,14 +121,14 @@ namespace ApplyOnline.DataAccessLayer
         public string Username { get; set; }
 
         [Required]
-        [MaxLengthAttribute]
+
         [MinLength(6)]
         [DataType(DataType.Password)]
         [Display(Name = "New Password")]
         public string New_Password { get; set; }
 
 
-        [MaxLengthAttribute]
+        [NotMapped]
         [MinLength(6)]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]

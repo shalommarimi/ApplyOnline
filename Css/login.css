@@ -1,4 +1,5 @@
-﻿.login-section {
+﻿
+.login-section {
     height: 100% !important;
     width: 100% !important;
     margin: auto;
@@ -13,8 +14,8 @@
     margin: 0 auto;
     margin-top: 190px;
     vertical-align: middle;
-    width: 450px;
-    height: 390px;
+    width:510px;
+    height: 55%;
     text-align: center;
     background-color: rgb(42, 43, 123);
     opacity: 0.7;
@@ -23,13 +24,12 @@
 
 .login-section .form-control {
     content: "\f007";
-    margin-left: 80px;
-    text-align: left;
     font-family: "FontAwesome";
     color: #fcbe1b;
     background-color: #ffffff;
     padding-top: 7px;
-    font-size: medium;
+    font-size:x-large;
+    text-align:center;
 }
 
 #forgotpassword p {
