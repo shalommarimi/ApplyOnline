@@ -22,6 +22,7 @@ namespace ApplyOnline.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection login)
         {
+            Session["Password"] = login["txtPassword"];
 
             using (var context = new DataDbContext())
             {
@@ -40,13 +41,14 @@ namespace ApplyOnline.Controllers
                         Session["FirstName"] = user.FirstName.ToString();
                         Session["LastName"] = user.FirstName.ToString();
 
+
                         FormsAuthentication.SetAuthCookie(user.Username, false);
                         return RedirectToAction("Dashboard", "Applicant", new { id = Session["PkApplicantId"] });
 
                     }
 
                 }
-                catch (System.Exception)
+                catch (Exception)
                 {
                     ModelState.AddModelError(string.Empty, "Username or Password is incorrect");
 
