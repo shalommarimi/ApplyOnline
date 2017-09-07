@@ -28,7 +28,7 @@ namespace ApplyOnline.Models
         [Display(Name = "Your Email Address")]
         public string EmailAddress { get; set; }
 
-
+        [Display(Name = "Gender")]
         public int FkGenderId { get; set; }
         [ForeignKey("FkGenderId")]
         public Gender Gender { get; set; }

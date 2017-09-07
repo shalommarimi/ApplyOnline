@@ -14,7 +14,16 @@ namespace ApplyOnline.Controllers
 
         public ActionResult Index()
         {
-            return View();
+
+            using (var dbContext = new DataDbContext())
+            {
+                var getGenderList = dbContext.Gender.ToList();
+                SelectList GenderList = new SelectList(getGenderList, "PkGenderId", "GenderValue");
+                ViewData["Sex"] = GenderList;
+                return View();
+
+            }
+
         }
 
 
@@ -26,6 +35,14 @@ namespace ApplyOnline.Controllers
             var captcha = new ValidateReCAPTCHA();
             bool result = captcha.IsReCAPTCHAvalid();
 
+
+            using (var dbContext = new DataDbContext())
+            {
+                var getGenderList = dbContext.Gender.ToList();
+                SelectList GenderList = new SelectList(getGenderList, "PkGenderId", "GenderValue");
+                ViewData["Sex"] = GenderList;
+
+            }
 
             if (ModelState.IsValid && result)
             {
