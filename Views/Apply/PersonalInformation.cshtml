@@ -3,6 +3,10 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+   
+    var preferedLanguage = new SelectList(new string[] { "English", "Afrikaans"});
+
 }
 
 
@@ -100,7 +104,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.FkGenderId, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.FkGenderId, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.FkGenderId, ViewData["Gender"] as SelectList, "Please select Gender", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.FkGenderId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -130,7 +134,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.FkNationalityId, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.FkNationalityId, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.FkNationalityId, ViewData["Nationality"] as SelectList, "Please select Nationality", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.FkNationalityId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -138,7 +142,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.FkPopulationId, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.FkPopulationId, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.FkPopulationId, ViewData["Population"] as SelectList, "Please select Population", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.FkPopulationId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -176,7 +180,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.FkMaritalStatusId, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.FkMaritalStatusId, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.FkMaritalStatusId, ViewData["Marital"] as SelectList, "Please select Marital Status", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.FkMaritalStatusId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -195,7 +199,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.PreferedCL, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.PreferedCL, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.PreferedCL, preferedLanguage, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.PreferedCL, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -262,7 +266,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.FkApplicationFieldId, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.FkApplicationFieldId, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.FkApplicationFieldId, ViewData["AppField"] as SelectList, "Please select Application Field", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.FkApplicationFieldId, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -270,7 +274,7 @@
                         <div class="form-group">
                             @Html.LabelFor(model => model.FkApplicationTypeId, htmlAttributes: new { @class = "control-label col-md-3" })
                             <div class="col-sm-6">
-                                @Html.EditorFor(model => model.FkApplicationTypeId, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
+                                @Html.DropDownListFor(model => model.FkApplicationTypeId, ViewData["AppType"] as SelectList, "Please select Application Type", htmlAttributes: new { @class = "form-control" })
                                 @Html.ValidationMessageFor(model => model.FkApplicationTypeId, "", new { @class = "text-danger" })
 
                             </div>
@@ -296,10 +300,10 @@
     </section>
     <!-- Code to wire up your DatePicker -->
     <script type="text/javascript">
-    $(function () {
-        // This will make every element with the class "date-picker" into a DatePicker element
-        $('.date-picker').datepicker();
-    })
+        $(function () {
+            // This will make every element with the class "date-picker" into a DatePicker element
+            $('.date-picker').datepicker();
+        })
     </script>
 </body>
 </html>

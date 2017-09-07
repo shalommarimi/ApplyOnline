@@ -7,8 +7,8 @@ namespace ApplyOnline.Models
     public class Nationality
     {
         [Key]
-        public int PkNatonalId { get; set; }
-        public string NationaityValue { get; set; }
+        public int PkNationalityId { get; set; }
+        public string NationalityValue { get; set; }
         public List<PersonalInformation> Applicant { get; set; }
     }
 }

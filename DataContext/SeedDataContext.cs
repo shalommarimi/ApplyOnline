@@ -66,10 +66,10 @@ namespace ApplyOnline.DataContext
 
 
             IList<Nationality> nationality = new List<Nationality>();
-            nationality.Add(new Nationality() { NationaityValue = "South African" });
-            nationality.Add(new Nationality() { NationaityValue = "Zimbabwen" });
-            nationality.Add(new Nationality() { NationaityValue = "Angolian" });
-            nationality.Add(new Nationality() { NationaityValue = "Limpopian" });
+            nationality.Add(new Nationality() { NationalityValue = "South African" });
+            nationality.Add(new Nationality() { NationalityValue = "Zimbabwen" });
+            nationality.Add(new Nationality() { NationalityValue = "Angolian" });
+            nationality.Add(new Nationality() { NationalityValue = "Limpopian" });
 
 
 
