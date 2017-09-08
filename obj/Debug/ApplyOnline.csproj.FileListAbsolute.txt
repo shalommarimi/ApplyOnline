@@ -64,3 +64,4 @@ C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\b
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\bin\System.Web.Mvc.xml
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\obj\Debug\ApplyOnline.dll
 C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\obj\Debug\ApplyOnline.pdb
+C:\Users\Smarimi\Documents\Visual Studio 2015\Projects\ApplyOnline\ApplyOnline\obj\Debug\ApplyOnline.csprojResolveAssemblyReference.cache

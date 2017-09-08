@@ -1,18 +1,24 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace ApplyOnline.Models
 {
-    public class MediaFiles
+    public class Files
     {
         [Key]
-        public int PkPuictureId { get; set; }
-        // public Image Picture { get; set; }
+        public int PkPictureId { get; set; }
+
+        [Display(Name = "Upload Picture")]
+        public string ImagePath { get; set; }
 
         public int FkApplicantId { get; set; }
         [ForeignKey("FkApplicantId")]
         public PersonalInformation PersonalInformations { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
 
     }
 }

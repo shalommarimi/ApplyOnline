@@ -1,6 +1,8 @@
 ﻿using ApplyOnline.DataContext;
 using ApplyOnline.Models;
 using ApplyOnline.Services;
+using System;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -26,6 +28,30 @@ namespace ApplyOnline.Controllers
 
         }
 
+
+
+
+        //Uploading The Imagery
+        [HttpPost]
+        public ActionResult UploadFile(Files files)
+        {
+
+            string fileName = Path.GetFileNameWithoutExtension(files.ImageFile.FileName);
+            string fileExtension = Path.GetExtension(files.ImageFile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + fileExtension;
+            files.ImagePath = "~/ApplicantsImages/" + fileName;
+
+            fileName = Path.Combine(Server.MapPath("~/ApplicantsImages/"), fileName);
+            files.ImageFile.SaveAs(fileName);
+
+            using (var db = new DataDbContext())
+            {
+                db.UploadFiles.Add(files);
+                db.SaveChanges();
+            }
+            ModelState.Clear();
+            return View();
+        }
 
 
         [HttpPost]
@@ -54,16 +80,12 @@ namespace ApplyOnline.Controllers
 
                         if (dbContext.Subscribers.Any(t => t.EmailAddress.Equals(subscribe.EmailAddress)))
                         {
-
                             ViewBag.Error = "The email \"" + subscribe.EmailAddress + "\" already exists!";
                             ModelState.Clear();
                             return View("Index");
-
                         }
                         else
                         {
-
-
                             dbContext.Subscribers.Add(subscribe);
                             dbContext.SaveChanges();
 
