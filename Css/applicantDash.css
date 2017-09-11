@@ -1,0 +1,30 @@
+﻿body {
+    margin: 0 auto;
+}
+
+.profile img {
+    border-radius: 50%;
+    border: solid 3px #FCBE1B;
+    margin-top: 6px;
+    position: relative;
+    float: left;
+    width: 112px;
+    height: 110px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    .profile img:hover {
+        border: solid 3px #2A2B7B;
+    }
+
+.form-horizontal h3 {
+    color: #2A2B7B;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+.profile h4 {
+    font-weight: bold;
+    color: #FCBE1B;
+}

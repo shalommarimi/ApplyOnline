@@ -73,6 +73,8 @@ namespace ApplyOnline.Controllers
                             personal.New_Password = HashPassword.HashPassword(personal.New_Password);
                             personal.ConfirmPassword = HashPassword.HashPassword(personal.ConfirmPassword);
 
+                            //Default Image
+                            personal.ImagePath = "~/ApplicantsImages/default.jpg";
                             dbContext.PersonalInformations.Add(personal);
                             dbContext.SaveChanges();
                             ModelState.Clear();

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace ApplyOnline.DataAccessLayer
 {
@@ -134,6 +135,14 @@ namespace ApplyOnline.DataAccessLayer
         [Display(Name = "Confirm Password")]
         [Compare("New_Password", ErrorMessage = "The Password and Confirmation Password do not match.")]
         public string ConfirmPassword { get; set; }
+
+
+        [Display(Name = "Upload Picture")]
+        public string ImagePath { get; set; }
+
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
 
 
         public List<WorkExprience> WorkExperiences { get; set; }

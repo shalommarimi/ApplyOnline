@@ -148,6 +148,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ApplicantsImages\default.jpg" />
+    <Content Include="ApplicantsImages\sk.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -196,6 +198,7 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Css\admindash.css" />
     <Content Include="Css\animate.css" />
+    <Content Include="Css\applicantDash.css" />
     <Content Include="Css\apply.css" />
     <Content Include="Css\bootstrap.min.css" />
     <Content Include="Css\index.css" />
@@ -418,7 +421,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ApplicantsImages\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,9 @@
 ﻿using ApplyOnline.DataAccessLayer;
 using ApplyOnline.DataContext;
 using ApplyOnline.Services;
+using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -70,8 +72,6 @@ namespace ApplyOnline.Controllers
         }
 
 
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Dashboard(PersonalInformation user)
@@ -113,10 +113,20 @@ namespace ApplyOnline.Controllers
                     user.New_Password = HashPassword.HashPassword(user.New_Password);
                     user.ConfirmPassword = HashPassword.HashPassword(user.ConfirmPassword);
 
+
+                    string fileName = Path.GetFileNameWithoutExtension(user.ImageFile.FileName);
+                    string fileExtension = Path.GetExtension(user.ImageFile.FileName);
+                    fileName = fileName + DateTime.Now.ToString("yymmssfff") + fileExtension;
+                    user.ImagePath = "~/ApplicantsImages/" + fileName;
+
+                    fileName = Path.Combine(Server.MapPath("~/ApplicantsImages/"), fileName);
+                    user.ImageFile.SaveAs(fileName);
+
                     dbContext.Entry(user).State = EntityState.Modified;
                     dbContext.SaveChanges();
-                    ViewBag.Updated = "Successfully Updated User";
-                    return View("Dashboard");
+                    ViewBag.Updated = "Successfully Updated User. Login required";
+                    return RedirectToAction("Dashboard", "Applicant");
+
                 }
                 else
                 {

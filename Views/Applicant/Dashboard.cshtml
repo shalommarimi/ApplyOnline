@@ -13,28 +13,31 @@
     <title>Update Information</title>
 </head>
 <body>
-    <div class="col-sm-5">
-        @if (Session["FirstName"] != null && Session["LastName"] != null)
-        {
-            <h4>User: @Session["FirstName"].ToString() @Session["LastName"].ToString()</h4>
-        }
-    </div>
 
-    @if (ViewBag.Updated != null)
+
+    @*@if (ViewBag.Updated != null)
     {
         <div class="alert alert-success">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <strong>Success! </strong>@ViewBag.Updated
         </div>
 
-    }
-
-    @using (Html.BeginForm("Dashboard","Applicant"))
+    }*@
+    <div class="profile col-sm-5">
+        @if (Session["FirstName"] != null && Session["LastName"] != null)
+        {
+            <img src="@Url.Content(Model.ImagePath)" /><br />
+            <h4>@Session["FirstName"].ToString() @Session["LastName"].ToString()</h4>
+        }
+       
+    </div>
+    <br /><br />
+    @using (Html.BeginForm("Dashboard", "Applicant", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
         <div class="form-horizontal">
-            <h3>Personal Information</h3>
+            <h3>Update Your Personal Information</h3>
 
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.PkApplicantId)
@@ -202,7 +205,7 @@
                 </div>
 
                 <br />
-                
+
                 <div class="col-md-6">
                     <div class="form-group">
                         @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -215,7 +218,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.New_Password, htmlAttributes: new { @class = "control-label col-md-3" })
                         <div class="col-sm-6">
-                            @Html.EditorFor(model => model.New_Password, new { htmlAttributes = new { @class = "form-control form-control-lg"} })
+                            @Html.EditorFor(model => model.New_Password, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
                             @Html.ValidationMessageFor(model => model.New_Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -223,9 +226,9 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-3" })
                         <div class="col-sm-6">
-                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control form-control-lg"} })
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control form-control-lg" } })
                             @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-                           
+
                         </div>
 
                     </div>
@@ -246,6 +249,15 @@
                             @Html.DropDownListFor(model => model.FkApplicationTypeId, ViewData["AppType"] as SelectList, "Please select Application Type", htmlAttributes: new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.FkApplicationTypeId, "", new { @class = "text-danger" })
 
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-3" })
+                        <div class="col-sm-6">
+                            <input type="file" name="ImageFile" class="form-control"/>
+                            @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
                         </div>
                     </div>
                 </div>

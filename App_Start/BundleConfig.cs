@@ -48,6 +48,7 @@ namespace ApplyOnline.App_Start
                 "~/Css/media.css",
                 "~/Css/slider.css",
                 "~/Css/side.css",
+                 "~/Css/applicantDash.css",
                 "~/Css/partners.css",
                 "~/Css/postings.css",
                 "~/Css/dashboard.css",

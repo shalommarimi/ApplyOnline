@@ -39,7 +39,8 @@ namespace ApplyOnline.Controllers
                     {
                         Session["PkApplicantId"] = Convert.ToInt32(user.PkApplicantId);
                         Session["FirstName"] = user.FirstName.ToString();
-                        Session["LastName"] = user.FirstName.ToString();
+                        Session["LastName"] = user.LastName.ToString();
+                        Session["Image"] = user.ImagePath.ToString();
 
 
                         FormsAuthentication.SetAuthCookie(user.Username, false);
