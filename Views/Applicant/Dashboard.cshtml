@@ -256,7 +256,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-3" })
                         <div class="col-sm-6">
-                            <input type="file" name="ImageFile" class="form-control"/>
+                            <input type="file" name="ImageFile" class="form-control col-sm-6"/>
                             @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -266,6 +266,7 @@
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" value="Update" class="btn" />
+                        <input type="button" name="submit" class="btn" value="Sign Out" onclick="location.href='@Url.Action("Logout", "Applicant")'" />
                     </div>
                 </div>
             </div>

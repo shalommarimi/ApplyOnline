@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ApplyOnline.Controllers
 {
@@ -136,6 +137,13 @@ namespace ApplyOnline.Controllers
 
             }
 
+        }
+
+        public ActionResult Logout()
+        {
+
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home"); ;
         }
     }
 }

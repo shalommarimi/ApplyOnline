@@ -3,6 +3,7 @@ using ApplyOnline.DataContext;
 using ApplyOnline.Services;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ApplyOnline.Controllers
 {
@@ -57,7 +58,36 @@ namespace ApplyOnline.Controllers
             bool result = captcha.IsReCAPTCHAvalid();
 
 
+            //Populate Lists
+            var dbContex = new DataDbContext();
+            var getPopulationList = dbContex.Populations.ToList();
+            var getGenderList = dbContex.Gender.ToList();
+            var getNationalityList = dbContex.Nationalities.ToList();
+            var getMaritalList = dbContex.MaritalStatus.ToList();
+            var getAppFieldList = dbContex.ApplicationField.ToList();
+            var getAppTypeList = dbContex.ApplicationType.ToList();
 
+
+
+
+
+
+            SelectList PopulationList = new SelectList(getPopulationList, "PkPopulationId", "PopulationValue");
+            SelectList GenderList = new SelectList(getGenderList, "PkGenderId", "GenderValue");
+            SelectList NationalityList = new SelectList(getNationalityList, "PkNationalityId", "NationalityValue");
+            SelectList MaritalList = new SelectList(getMaritalList, "PkMaritalStatusId", "MaritalStatusValue");
+            SelectList AppFieldList = new SelectList(getAppFieldList, "PkApplicationFieldId", "FieldName");
+            SelectList AppTypeList = new SelectList(getAppTypeList, "PkApplicationTypeId", "ApplicationTypeName");
+
+
+
+
+            ViewData["Population"] = PopulationList;
+            ViewData["Gender"] = GenderList;
+            ViewData["Nationality"] = NationalityList;
+            ViewData["Marital"] = MaritalList;
+            ViewData["AppType"] = AppTypeList;
+            ViewData["AppField"] = AppFieldList;
 
             if (ModelState.IsValid && result)
             {
@@ -70,38 +100,6 @@ namespace ApplyOnline.Controllers
                         {
 
 
-                            //Populate Lists
-                            var getPopulationList = dbContext.Populations.ToList();
-                            var getGenderList = dbContext.Gender.ToList();
-                            var getNationalityList = dbContext.Nationalities.ToList();
-                            var getMaritalList = dbContext.MaritalStatus.ToList();
-                            var getAppFieldList = dbContext.ApplicationField.ToList();
-                            var getAppTypeList = dbContext.ApplicationType.ToList();
-
-
-
-
-
-
-                            SelectList PopulationList = new SelectList(getPopulationList, "PkPopulationId", "PopulationValue");
-                            SelectList GenderList = new SelectList(getGenderList, "PkGenderId", "GenderValue");
-                            SelectList NationalityList = new SelectList(getNationalityList, "PkNationalityId", "NationalityValue");
-                            SelectList MaritalList = new SelectList(getMaritalList, "PkMaritalStatusId", "MaritalStatusValue");
-                            SelectList AppFieldList = new SelectList(getAppFieldList, "PkApplicationFieldId", "FieldName");
-                            SelectList AppTypeList = new SelectList(getAppTypeList, "PkApplicationTypeId", "ApplicationTypeName");
-
-
-
-
-                            ViewData["Population"] = PopulationList;
-                            ViewData["Gender"] = GenderList;
-                            ViewData["Nationality"] = NationalityList;
-                            ViewData["Marital"] = MaritalList;
-                            ViewData["AppType"] = AppTypeList;
-                            ViewData["AppField"] = AppFieldList;
-
-
-
                             var HashPassword = new Hashing();
 
                             //Hashing Password before it is saved
@@ -110,6 +108,7 @@ namespace ApplyOnline.Controllers
 
                             //Default Image
                             personal.ImagePath = "~/ApplicantsImages/default.jpg";
+
                             dbContext.PersonalInformations.Add(personal);
                             dbContext.SaveChanges();
                             ModelState.Clear();
@@ -146,6 +145,15 @@ namespace ApplyOnline.Controllers
                 return View();
             }
 
+
+
+        }
+
+        public ActionResult Logout()
+        {
+
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home"); ;
         }
     }
 }
