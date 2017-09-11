@@ -57,6 +57,8 @@ namespace ApplyOnline.Controllers
             bool result = captcha.IsReCAPTCHAvalid();
 
 
+
+
             if (ModelState.IsValid && result)
             {
 
@@ -66,6 +68,39 @@ namespace ApplyOnline.Controllers
                     {
                         if (!dbContext.PersonalInformations.Any(t => t.IdNumber.Equals(personal.IdNumber)) || !dbContext.PersonalInformations.Any(t => t.EmailAddress.Equals(personal.EmailAddress)))
                         {
+
+
+                            //Populate Lists
+                            var getPopulationList = dbContext.Populations.ToList();
+                            var getGenderList = dbContext.Gender.ToList();
+                            var getNationalityList = dbContext.Nationalities.ToList();
+                            var getMaritalList = dbContext.MaritalStatus.ToList();
+                            var getAppFieldList = dbContext.ApplicationField.ToList();
+                            var getAppTypeList = dbContext.ApplicationType.ToList();
+
+
+
+
+
+
+                            SelectList PopulationList = new SelectList(getPopulationList, "PkPopulationId", "PopulationValue");
+                            SelectList GenderList = new SelectList(getGenderList, "PkGenderId", "GenderValue");
+                            SelectList NationalityList = new SelectList(getNationalityList, "PkNationalityId", "NationalityValue");
+                            SelectList MaritalList = new SelectList(getMaritalList, "PkMaritalStatusId", "MaritalStatusValue");
+                            SelectList AppFieldList = new SelectList(getAppFieldList, "PkApplicationFieldId", "FieldName");
+                            SelectList AppTypeList = new SelectList(getAppTypeList, "PkApplicationTypeId", "ApplicationTypeName");
+
+
+
+
+                            ViewData["Population"] = PopulationList;
+                            ViewData["Gender"] = GenderList;
+                            ViewData["Nationality"] = NationalityList;
+                            ViewData["Marital"] = MaritalList;
+                            ViewData["AppType"] = AppTypeList;
+                            ViewData["AppField"] = AppFieldList;
+
+
 
                             var HashPassword = new Hashing();
 
